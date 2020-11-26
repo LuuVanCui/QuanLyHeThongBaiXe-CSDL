@@ -53,13 +53,18 @@ create table DangKy(
 		on update cascade
 )
 
-create table GiaTienLoaiXe(
+create table LoaiXe(
 	MaLoaiXe char(10),
 	TenLoaiXe nvarchar(50),
-	TenLoaiGia nvarchar(50),
-	GiaTien real,
-	NgayApDung date,
 	primary key(MaLoaiXe)
+)
+
+create table BangGia(
+	MaLoaiGia char(10) primary key,
+	TenLoaiGia nvarchar(50), -- VD: Giá gửi theo ngày, tuần, tháng - giá phạt theo ngày
+	GiaTien real,
+	NgayApDung datetime,
+	MaLoaiXe char(10) references LoaiXe(MaLoaiXe)
 )
 
 create table Xe(
@@ -79,17 +84,13 @@ alter table Xe
 	foreign key(baixe_id) references BaiXe(baixe_id)
 go
 alter table Xe
-	with check add constraint fk_check_loaixe
-	foreign key(MaLoaiXe) references GiaTienLoaiXe(MaLoaiXe)
-go
-alter table Xe
 	with check add constraint fk_check_thexe
 	foreign key(MaTheXe) references TheXe(MaTheXe)
 go
 
 create table Users(
 	id char(10),
-	TenDangNhap varchar(20),
+	TenDangNhap varchar(20) unique,
 	MatKhau varchar(20),
 	Ten nvarchar(50),
 	SDT bigint,
@@ -126,3 +127,26 @@ create table Quyen(
 		on delete cascade
 		on update cascade
 )
+
+
+-- Trigger cập nhật trạng thái của thẻ xe khi xe vào của khách vãng lai
+create trigger tr_capNhatTrangThaiXeRaVao
+	on Xe after insert, update as
+	begin
+		declare @mathexe char(10), @tgRa datetime
+		select @mathexe = MaTheXe, @tgRa = ThoiGianRa from inserted
+		if (@tgRa is null)
+			begin
+				update TheXe
+				set TrangThai='Đang sử dụng'
+				where MaTheXe = @mathexe
+				print 'Đã cập nhật trạng thái của xe vào'
+			end
+		else 
+			begin
+				update TheXe
+				set TrangThai='Sẵn sàng sử dụng'
+				where MaTheXe = @mathexe
+				print 'Đã cập nhật trạng thái của xe ra'
+			end
+	end
