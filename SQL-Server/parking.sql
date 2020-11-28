@@ -1,7 +1,7 @@
 ﻿create table KhachHang(
 	kh_id char(10),
 	ten nvarchar(50),
-	sdt bigint,
+	sdt char(15),
 	primary key(kh_id)
 )
 
