@@ -46,17 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NhanVien\EmployeeForm.cs">
+    <Compile Include="NhanVien\BangGiaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVien\EmployeeForm.Designer.cs">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    <Compile Include="NhanVien\BangGiaForm.Designer.cs">
+      <DependentUpon>BangGiaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\CheckInOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\CheckInOutForm.Designer.cs">
+      <DependentUpon>CheckInOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\DangKyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\DangKyForm.Designer.cs">
+      <DependentUpon>DangKyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\EmpDashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\EmpDashBoardForm.Designer.cs">
+      <DependentUpon>EmpDashBoardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="common\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="common\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\KhachHangForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\KhachHangForm.Designer.cs">
+      <DependentUpon>KhachHangForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,17 +90,26 @@
     <Compile Include="NhanVien\TheXeForm.Designer.cs">
       <DependentUpon>TheXeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien\WorkingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhanVien\WorkingForm.Designer.cs">
-      <DependentUpon>WorkingForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="NhanVien\EmployeeForm.resx">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    <EmbeddedResource Include="NhanVien\BangGiaForm.resx">
+      <DependentUpon>BangGiaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\CheckInOutForm.aa-ER.resx">
+      <DependentUpon>CheckInOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\CheckInOutForm.resx">
+      <DependentUpon>CheckInOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\DangKyForm.resx">
+      <DependentUpon>DangKyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\EmpDashBoardForm.resx">
+      <DependentUpon>EmpDashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="common\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\KhachHangForm.resx">
+      <DependentUpon>KhachHangForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,9 +122,6 @@
     </Compile>
     <EmbeddedResource Include="NhanVien\TheXeForm.resx">
       <DependentUpon>TheXeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien\WorkingForm.resx">
-      <DependentUpon>WorkingForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
