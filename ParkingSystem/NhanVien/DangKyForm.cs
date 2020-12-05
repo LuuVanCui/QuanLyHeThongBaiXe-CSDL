@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ParkingSystem
+namespace ParkingSystem.NhanVien
 {
-    public partial class WorkingForm : Form
+    public partial class DangKyForm : Form
     {
-        public WorkingForm()
+        public DangKyForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void DangKyForm_Load(object sender, EventArgs e)
         {
 
         }
