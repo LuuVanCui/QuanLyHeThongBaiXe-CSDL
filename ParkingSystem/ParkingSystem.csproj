@@ -94,6 +94,7 @@
     <Compile Include="Admin\frmQLNhanVien.Designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="My_DB.cs" />
     <Compile Include="NhanVien\BangGiaForm.cs">
       <SubType>Form</SubType>
     </Compile>

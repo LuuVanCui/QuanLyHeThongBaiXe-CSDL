@@ -17,9 +17,17 @@ namespace ParkingSystem
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
-
+            if (My_DB.isConnectExist(textBoxServerName.Text,
+                textBox_username.Text, textBox_password.Text))
+            {
+                MessageBox.Show("Login Successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Login error!");
+            }
         }
     }
 }
