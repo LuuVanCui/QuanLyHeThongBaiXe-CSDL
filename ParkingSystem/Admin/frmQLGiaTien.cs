@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ParkingSystem.Admin
 {
-    public partial class frmQLTien : Form
+    public partial class frmQLGiaTien : Form
     {
-        public frmQLTien()
+        public frmQLGiaTien()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

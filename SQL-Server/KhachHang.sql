@@ -1,4 +1,4 @@
--- Insert table Kh·ch H‡ng 
+Ôªø-- Insert table Kh√°ch H√†ng 
 create proc p_InsertKhachHang @id char(10), @name nvarchar(50), @phone char(15)
 	as begin
 		insert into KhachHang
@@ -11,7 +11,7 @@ exec p_InsertKhachHang 'KH3', 'Nguyen Van C', '01234563223'
 
 select * from KhachHang
 
--- Update table Kh·ch H‡ng
+-- Update table Kh√°ch H√†ng
 create proc p_updateKhachHang @id char(10), @name nvarchar(50), @phone char(15)
 	as begin
 		update KhachHang
@@ -22,7 +22,7 @@ create proc p_updateKhachHang @id char(10), @name nvarchar(50), @phone char(15)
 exec p_updateKhachHang 'KH2', 'Nguyen Van B', '123123123'
 select * from KhachHang
 
--- Delete table Kh·ch H‡ng
+-- Delete table Kh√°ch H√†ng
 create proc p_deleteKhachHang @id char(10)
 	as begin
 		delete from KhachHang where kh_id = @id
@@ -32,7 +32,7 @@ exec p_deleteKhachHang 'KH2'
 select * from KhachHang
 
 
--- H‡m TÏm kh·ch h‡ng theo id
+-- H√†m T√¨m kh√°ch h√†ng theo id
 create function f_findCustomerById(@id char(10))
 	returns table
 	as return(
@@ -44,3 +44,8 @@ create function f_findCustomerById(@id char(10))
 drop function f_findCustomerById
 
 select * from f_findCustomerById('KH1')
+
+
+-- c√°c h√†m th·ªß t·ª•c view b√™n admin
+--view L·∫•y KH theo b√£i xe
+--

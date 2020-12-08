@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ParkingSystem.Admin
 {
-    public partial class QLNhanVien : Form
+    public partial class frmQLNhanVien : Form
     {
-        public QLNhanVien()
+        public frmQLNhanVien()
         {
             InitializeComponent();
         }

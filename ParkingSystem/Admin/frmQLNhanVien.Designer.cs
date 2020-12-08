@@ -1,6 +1,6 @@
 ﻿namespace ParkingSystem.Admin
 {
-    partial class QLNhanVien
+    partial class frmQLNhanVien
     {
         /// <summary>
         /// Required designer variable.
