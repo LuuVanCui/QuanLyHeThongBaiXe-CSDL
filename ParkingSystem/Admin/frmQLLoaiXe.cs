@@ -8,20 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ParkingSystem.NhanVien
+namespace ParkingSystem.Admin
 {
-    public partial class KhachHangForm : Form
+    public partial class frmQLLoaiXe : Form
     {
-        public KhachHangForm()
+        public frmQLLoaiXe()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-       
     }
 }

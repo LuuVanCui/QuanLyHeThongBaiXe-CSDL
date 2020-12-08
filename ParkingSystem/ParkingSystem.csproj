@@ -46,6 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmPhanQuyen.Designer.cs">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmQLDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmQLDangKy.Designer.cs">
+      <DependentUpon>frmQLDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmQLGiaTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmQLGiaTien.Designer.cs">
+      <DependentUpon>frmQLGiaTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmQLLoaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmQLLoaiXe.Designer.cs">
+      <DependentUpon>frmQLLoaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmQLTheXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmQLTheXe.Designer.cs">
+      <DependentUpon>frmQLTheXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmQuanLyKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmQuanLyKhachHang.Designer.cs">
+      <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmQLNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmQLNhanVien.Designer.cs">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien\BangGiaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +138,21 @@
     <Compile Include="NhanVien\TheXeForm.Designer.cs">
       <DependentUpon>TheXeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmQLGiaTien.resx">
+      <DependentUpon>frmQLGiaTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmQLLoaiXe.resx">
+      <DependentUpon>frmQLLoaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmQLTheXe.resx">
+      <DependentUpon>frmQLTheXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmQuanLyKhachHang.resx">
+      <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\BangGiaForm.resx">
       <DependentUpon>BangGiaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,8 +199,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
