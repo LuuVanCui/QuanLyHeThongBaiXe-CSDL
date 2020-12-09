@@ -1,6 +1,6 @@
 ﻿namespace ParkingSystem
 {
-    partial class EmployeeForm
+    partial class EmployeeDashBoardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,90 +29,95 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
+            this.labelWelcome = new System.Windows.Forms.Label();
+            this.buttonTheXe = new System.Windows.Forms.Button();
+            this.buttonKhachHang = new System.Windows.Forms.Button();
+            this.buttonDangKy = new System.Windows.Forms.Button();
+            this.buttonCheckInOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.buttonLogout);
+            this.panel1.Controls.Add(this.labelWelcome);
             this.panel1.Location = new System.Drawing.Point(-1, -4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 116);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // buttonLogout
             // 
-            this.button1.Location = new System.Drawing.Point(657, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLogout.Location = new System.Drawing.Point(628, 26);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(121, 73);
+            this.buttonLogout.TabIndex = 1;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
-            // label1
+            // labelWelcome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome";
+            this.labelWelcome.AutoSize = true;
+            this.labelWelcome.Location = new System.Drawing.Point(41, 52);
+            this.labelWelcome.Name = "labelWelcome";
+            this.labelWelcome.Size = new System.Drawing.Size(75, 20);
+            this.labelWelcome.TabIndex = 0;
+            this.labelWelcome.Text = "Welcome";
             // 
-            // button2
+            // buttonTheXe
             // 
-            this.button2.Location = new System.Drawing.Point(55, 169);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Thẻ xe";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonTheXe.Location = new System.Drawing.Point(44, 140);
+            this.buttonTheXe.Name = "buttonTheXe";
+            this.buttonTheXe.Size = new System.Drawing.Size(321, 129);
+            this.buttonTheXe.TabIndex = 1;
+            this.buttonTheXe.Text = "Thẻ xe";
+            this.buttonTheXe.UseVisualStyleBackColor = true;
+            this.buttonTheXe.Click += new System.EventHandler(this.buttonTheXe_Click);
             // 
-            // button3
+            // buttonKhachHang
             // 
-            this.button3.Location = new System.Drawing.Point(430, 169);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 42);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Khách hàng";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonKhachHang.Location = new System.Drawing.Point(424, 140);
+            this.buttonKhachHang.Name = "buttonKhachHang";
+            this.buttonKhachHang.Size = new System.Drawing.Size(324, 129);
+            this.buttonKhachHang.TabIndex = 1;
+            this.buttonKhachHang.Text = "Khách hàng";
+            this.buttonKhachHang.UseVisualStyleBackColor = true;
+            this.buttonKhachHang.Click += new System.EventHandler(this.buttonKhachHang_Click);
             // 
-            // button4
+            // buttonDangKy
             // 
-            this.button4.Location = new System.Drawing.Point(616, 169);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 42);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Đăng ký";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonDangKy.Location = new System.Drawing.Point(424, 302);
+            this.buttonDangKy.Name = "buttonDangKy";
+            this.buttonDangKy.Size = new System.Drawing.Size(324, 126);
+            this.buttonDangKy.TabIndex = 1;
+            this.buttonDangKy.Text = "Đăng ký";
+            this.buttonDangKy.UseVisualStyleBackColor = true;
+            this.buttonDangKy.Click += new System.EventHandler(this.buttonDangKy_Click);
             // 
-            // button5
+            // buttonCheckInOut
             // 
-            this.button5.Location = new System.Drawing.Point(239, 169);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 42);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Check in/out";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonCheckInOut.Location = new System.Drawing.Point(44, 302);
+            this.buttonCheckInOut.Name = "buttonCheckInOut";
+            this.buttonCheckInOut.Size = new System.Drawing.Size(321, 126);
+            this.buttonCheckInOut.TabIndex = 1;
+            this.buttonCheckInOut.Text = "Check in/out";
+            this.buttonCheckInOut.UseVisualStyleBackColor = true;
+            this.buttonCheckInOut.Click += new System.EventHandler(this.buttonCheckInOut_Click);
             // 
-            // EmployeeForm
+            // EmployeeDashBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 244);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(789, 463);
+            this.Controls.Add(this.buttonDangKy);
+            this.Controls.Add(this.buttonCheckInOut);
+            this.Controls.Add(this.buttonKhachHang);
+            this.Controls.Add(this.buttonTheXe);
             this.Controls.Add(this.panel1);
-            this.Name = "EmployeeForm";
+            this.Name = "EmployeeDashBoardForm";
             this.Text = "Dashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -123,11 +128,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Label labelWelcome;
+        private System.Windows.Forms.Button buttonTheXe;
+        private System.Windows.Forms.Button buttonKhachHang;
+        private System.Windows.Forms.Button buttonDangKy;
+        private System.Windows.Forms.Button buttonCheckInOut;
     }
 }

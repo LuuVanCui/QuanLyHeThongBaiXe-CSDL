@@ -49,7 +49,6 @@ E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\D
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.BangGiaForm.resources
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.CheckInOutForm.resources
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.DangKyForm.resources
-E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.EmployeeForm.resources
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.LoginForm.resources
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.KhachHangForm.resources
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Properties.Resources.resources
@@ -60,3 +59,4 @@ E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\D
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\aa-ER\ParkingSystem.resources.dll
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.exe
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.pdb
+E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.EmployeeDashBoardForm.resources
