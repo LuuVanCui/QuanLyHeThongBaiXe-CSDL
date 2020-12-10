@@ -82,6 +82,12 @@
     <Compile Include="Admin\frmQLTheXe.Designer.cs">
       <DependentUpon>frmQLTheXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\frmQLXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmQLXe.Designer.cs">
+      <DependentUpon>frmQLXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\frmQuanLyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,7 +100,9 @@
     <Compile Include="Admin\frmQLNhanVien.Designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="common\ALoaiXe.cs" />
     <Compile Include="common\KhachHang.cs" />
+    <Compile Include="common\Xe.cs" />
     <Compile Include="My_DB.cs" />
     <Compile Include="NhanVien\BangGiaForm.cs">
       <SubType>Form</SubType>
@@ -151,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLTheXe.resx">
       <DependentUpon>frmQLTheXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmQLXe.resx">
+      <DependentUpon>frmQLXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQuanLyKhachHang.resx">
       <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>

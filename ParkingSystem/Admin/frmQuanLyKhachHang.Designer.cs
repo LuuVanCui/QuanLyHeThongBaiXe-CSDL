@@ -113,6 +113,7 @@
             this.buttonThem.TabIndex = 16;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // textBoxSDT
             // 
@@ -181,6 +182,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmQuanLyKhachHang";
             this.Text = "frmQuanLyKhachHang";
+            this.Load += new System.EventHandler(this.frmQuanLyKhachHang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

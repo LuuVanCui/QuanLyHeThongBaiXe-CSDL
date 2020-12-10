@@ -64,6 +64,7 @@
             this.buttonQLGiaTien.TabIndex = 0;
             this.buttonQLGiaTien.Text = "Quản lý tiền gửi & tiền phạt";
             this.buttonQLGiaTien.UseVisualStyleBackColor = true;
+            this.buttonQLGiaTien.Click += new System.EventHandler(this.buttonQLGiaTien_Click);
             // 
             // buttonQLDoanhThu
             // 
@@ -73,6 +74,7 @@
             this.buttonQLDoanhThu.TabIndex = 0;
             this.buttonQLDoanhThu.Text = "Quản lý doanh thu";
             this.buttonQLDoanhThu.UseVisualStyleBackColor = true;
+            this.buttonQLDoanhThu.Click += new System.EventHandler(this.buttonQLDoanhThu_Click);
             // 
             // buttonCapQuyen
             // 
@@ -82,6 +84,7 @@
             this.buttonCapQuyen.TabIndex = 0;
             this.buttonCapQuyen.Text = "Cấp quyền";
             this.buttonCapQuyen.UseVisualStyleBackColor = true;
+            this.buttonCapQuyen.Click += new System.EventHandler(this.buttonCapQuyen_Click);
             // 
             // buttonBLNhanVien
             // 
@@ -91,6 +94,7 @@
             this.buttonBLNhanVien.TabIndex = 0;
             this.buttonBLNhanVien.Text = "Quản lý nhân viên";
             this.buttonBLNhanVien.UseVisualStyleBackColor = true;
+            this.buttonBLNhanVien.Click += new System.EventHandler(this.buttonBLNhanVien_Click);
             // 
             // buttonQLLoaiXe
             // 
@@ -100,6 +104,7 @@
             this.buttonQLLoaiXe.TabIndex = 0;
             this.buttonQLLoaiXe.Text = "Quản lý loại xe";
             this.buttonQLLoaiXe.UseVisualStyleBackColor = true;
+            this.buttonQLLoaiXe.Click += new System.EventHandler(this.buttonQLLoaiXe_Click);
             // 
             // buttonQLBaiXe
             // 
@@ -109,6 +114,7 @@
             this.buttonQLBaiXe.TabIndex = 0;
             this.buttonQLBaiXe.Text = "Quản lý các bãi";
             this.buttonQLBaiXe.UseVisualStyleBackColor = true;
+            this.buttonQLBaiXe.Click += new System.EventHandler(this.buttonQLBaiXe_Click);
             // 
             // buttonQLKhachHang
             // 
@@ -118,6 +124,7 @@
             this.buttonQLKhachHang.TabIndex = 0;
             this.buttonQLKhachHang.Text = "Quản lý khách hàng";
             this.buttonQLKhachHang.UseVisualStyleBackColor = true;
+            this.buttonQLKhachHang.Click += new System.EventHandler(this.buttonQLKhachHang_Click);
             // 
             // buttonQLTheXe
             // 
@@ -127,6 +134,7 @@
             this.buttonQLTheXe.TabIndex = 0;
             this.buttonQLTheXe.Text = "Quản lý thẻ xe";
             this.buttonQLTheXe.UseVisualStyleBackColor = true;
+            this.buttonQLTheXe.Click += new System.EventHandler(this.buttonQLTheXe_Click);
             // 
             // AdminDashboard
             // 
