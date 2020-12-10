@@ -29,5 +29,10 @@ namespace ParkingSystem
                 MessageBox.Show("Login error!");
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

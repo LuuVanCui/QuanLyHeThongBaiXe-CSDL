@@ -60,3 +60,28 @@ E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\D
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\aa-ER\ParkingSystem.resources.dll
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.exe
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.pdb
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\bin\Debug\ParkingSystem.exe.config
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\bin\Debug\ParkingSystem.exe
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\bin\Debug\ParkingSystem.pdb
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\bin\Debug\aa-ER\ParkingSystem.resources.dll
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.csprojAssemblyReference.cache
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.AdminDashboard.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQLGiaTien.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQLLoaiXe.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQLTheXe.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQuanLyKhachHang.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.BangGiaForm.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.CheckInOutForm.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.DangKyForm.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.EmployeeForm.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.LoginForm.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.KhachHangForm.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Properties.Resources.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.TheXeForm.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.CheckInOutForm.aa-ER.resources
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.csproj.GenerateResource.cache
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.csproj.CoreCompileInputs.cache
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\aa-ER\ParkingSystem.resources.dll
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.exe
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.pdb
+D:\nam 3\HK1\DBMS\project cuoi ky new2\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQLXe.resources

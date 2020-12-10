@@ -91,6 +91,7 @@
             this.buttonBLNhanVien.TabIndex = 0;
             this.buttonBLNhanVien.Text = "Quản lý nhân viên";
             this.buttonBLNhanVien.UseVisualStyleBackColor = true;
+            this.buttonBLNhanVien.Click += new System.EventHandler(this.buttonBLNhanVien_Click);
             // 
             // buttonQLLoaiXe
             // 
@@ -100,6 +101,7 @@
             this.buttonQLLoaiXe.TabIndex = 0;
             this.buttonQLLoaiXe.Text = "Quản lý loại xe";
             this.buttonQLLoaiXe.UseVisualStyleBackColor = true;
+            this.buttonQLLoaiXe.Click += new System.EventHandler(this.buttonQLLoaiXe_Click_1);
             // 
             // buttonQLBaiXe
             // 
@@ -109,6 +111,7 @@
             this.buttonQLBaiXe.TabIndex = 0;
             this.buttonQLBaiXe.Text = "Quản lý các bãi";
             this.buttonQLBaiXe.UseVisualStyleBackColor = true;
+            this.buttonQLBaiXe.Click += new System.EventHandler(this.buttonQLBaiXe_Click);
             // 
             // buttonQLKhachHang
             // 

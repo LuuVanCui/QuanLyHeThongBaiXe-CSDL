@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxTimKiem = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
+            this.buttonTimKiem = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
             this.textBoxTenLoaiXe = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,9 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxTimKiem = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.buttonTimKiem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,25 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textBoxTimKiem
+            // 
+            this.textBoxTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxTimKiem.Location = new System.Drawing.Point(642, 219);
+            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxTimKiem.Name = "textBoxTimKiem";
+            this.textBoxTimKiem.Size = new System.Drawing.Size(226, 26);
+            this.textBoxTimKiem.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(638, 197);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Tìm kiếm:";
+            // 
             // buttonXoa
             // 
             this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -88,6 +107,17 @@
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
             // 
+            // buttonTimKiem
+            // 
+            this.buttonTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonTimKiem.Location = new System.Drawing.Point(886, 217);
+            this.buttonTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonTimKiem.Name = "buttonTimKiem";
+            this.buttonTimKiem.Size = new System.Drawing.Size(108, 28);
+            this.buttonTimKiem.TabIndex = 16;
+            this.buttonTimKiem.Text = "Tìm";
+            this.buttonTimKiem.UseVisualStyleBackColor = true;
+            // 
             // buttonThem
             // 
             this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -98,6 +128,7 @@
             this.buttonThem.TabIndex = 16;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // textBoxTenLoaiXe
             // 
@@ -139,6 +170,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 249);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -158,36 +190,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Quản Lý Loại Xe";
             // 
-            // textBoxTimKiem
-            // 
-            this.textBoxTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxTimKiem.Location = new System.Drawing.Point(642, 219);
-            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxTimKiem.Name = "textBoxTimKiem";
-            this.textBoxTimKiem.Size = new System.Drawing.Size(226, 26);
-            this.textBoxTimKiem.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(638, 197);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Tìm kiếm:";
-            // 
-            // buttonTimKiem
-            // 
-            this.buttonTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonTimKiem.Location = new System.Drawing.Point(886, 217);
-            this.buttonTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonTimKiem.Name = "buttonTimKiem";
-            this.buttonTimKiem.Size = new System.Drawing.Size(108, 28);
-            this.buttonTimKiem.TabIndex = 16;
-            this.buttonTimKiem.Text = "Tìm";
-            this.buttonTimKiem.UseVisualStyleBackColor = true;
-            // 
             // frmQLLoaiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -196,6 +198,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmQLLoaiXe";
             this.Text = "frmQLLoaiXe";
+            this.Load += new System.EventHandler(this.frmQLLoaiXe_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
