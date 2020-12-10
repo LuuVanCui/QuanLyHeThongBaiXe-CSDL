@@ -84,3 +84,13 @@ as
 	select * from BaiXe
 
 select * from view_BaiXe
+
+create view view_MaTheXeCheckIn
+	as 
+	select * from TheXe
+	where TrangThai=N'Sẵn sàng sử dụng'
+
+create view view_MaTheXeCheckOut
+	as 
+	select * from TheXe
+	where TrangThai=N'Đang sử dụng'
