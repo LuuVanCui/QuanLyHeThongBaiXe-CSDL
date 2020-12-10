@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ParkingSystem.Class;
 
 namespace ParkingSystem
 {
@@ -19,12 +18,11 @@ namespace ParkingSystem
             InitializeComponent();
         }
 
-        TheXe theXe = new TheXe();
-
         private void TheXeForm_Load(object sender, EventArgs e)
         {
+            Globals.makeUpViews(dataGridViewTheXe);
             string query = "select * from view_NVXemTheXe";
-            dataGridViewTheXe.DataSource = theXe.getData(new SqlCommand(query));
+            dataGridViewTheXe.DataSource = Globals.getData(new SqlCommand(query));
         }
     }
 }
