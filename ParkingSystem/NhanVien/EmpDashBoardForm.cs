@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParkingSystem.NhanVien;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,40 @@ using System.Windows.Forms;
 
 namespace ParkingSystem
 {
-    public partial class EmployeeForm : Form
+    public partial class EmployeeDashBoardForm : Form
     {
-        public EmployeeForm()
+        public EmployeeDashBoardForm()
         {
             InitializeComponent();
+        }
+
+        private void buttonTheXe_Click(object sender, EventArgs e)
+        {
+            TheXeForm theXeForm = new TheXeForm();
+            theXeForm.ShowDialog(this);
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonCheckInOut_Click(object sender, EventArgs e)
+        {
+            CheckInOutForm checkInOutForm = new CheckInOutForm();
+            checkInOutForm.ShowDialog(this);
+        }
+
+        private void buttonKhachHang_Click(object sender, EventArgs e)
+        {
+            KhachHangForm khachHangForm = new KhachHangForm();
+            khachHangForm.ShowDialog(this);
+        }
+
+        private void buttonDangKy_Click(object sender, EventArgs e)
+        {
+            DangKyForm dangKyForm = new DangKyForm();
+            dangKyForm.ShowDialog(this);
         }
     }
 }

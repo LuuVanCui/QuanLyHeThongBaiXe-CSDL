@@ -10,6 +10,13 @@ namespace ParkingSystem
     class My_DB
     {
         SqlConnection con = new SqlConnection();
+
+        public My_DB()
+        {
+            string cs = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=PARKING;Integrated Security=True";
+            con.ConnectionString = cs;
+        }
+
         public My_DB(string serverName, string username, string password)
         {
             string cs = "Data Source=" + serverName + ";Initial Catalog=PARKING;User ID=" + username + ";Password=" + password;
