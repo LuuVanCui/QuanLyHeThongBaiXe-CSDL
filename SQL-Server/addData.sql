@@ -209,3 +209,5 @@ insert into PhanQuyen values('1','Xem Doanh Thu','admin', 1),('2','Them nhanVien
 
 ----
 insert into Quyen values('1','1'),('1','2'),('2','3'),('2','4'),('3','3'),('3','4')
+
+insert into LoaiXe values('LX1', 'Xe May'), ('LX2', 'Xe Hoi')
