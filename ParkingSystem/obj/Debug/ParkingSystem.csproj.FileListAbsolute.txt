@@ -85,3 +85,4 @@ D:\nam 3\HK1\DBMS\project new 3\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\
 D:\nam 3\HK1\DBMS\project new 3\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\aa-ER\ParkingSystem.resources.dll
 D:\nam 3\HK1\DBMS\project new 3\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.exe
 D:\nam 3\HK1\DBMS\project new 3\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.pdb
+E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQLXe.resources
