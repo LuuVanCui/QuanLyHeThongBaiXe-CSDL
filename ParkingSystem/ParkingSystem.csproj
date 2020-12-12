@@ -158,9 +158,6 @@
     <EmbeddedResource Include="NhanVien\BangGiaForm.resx">
       <DependentUpon>BangGiaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien\CheckInOutForm.aa-ER.resx">
-      <DependentUpon>CheckInOutForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\CheckInOutForm.resx">
       <DependentUpon>CheckInOutForm.cs</DependentUpon>
     </EmbeddedResource>
