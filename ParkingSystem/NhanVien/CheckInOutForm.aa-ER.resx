@@ -118,25 +118,174 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 343</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt, style=Bold</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 343</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 61</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>392, 46</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Quản Lý Xe Ra Vào</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 163</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 25</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>MT Checkin:</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 259</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 25</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Biển Số:</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>699, 259</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 25</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Loại Xe:</value>
+  </data>
+  <data name="comboBoxMaTheXeCheckIn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="comboBoxMaTheXeCheckIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 33</value>
+  </data>
+  <data name="comboBoxLoaiXe.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="comboBoxLoaiXe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 33</value>
+  </data>
+  <data name="textBoxBienSo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="textBoxBienSo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 30</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 379</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 25</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Ảnh Trước:</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 31</value>
+    <value>689, 379</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 37</value>
+    <value>95, 25</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Quản lý xe ra vào</value>
+    <value>Ảnh Sau:</value>
+  </data>
+  <data name="pictureBoxAnhTruoc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 164</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBoxAnhTruoc.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBoxAnhSau.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 164</value>
+  </data>
+  <data name="pictureBoxAnhSau.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="buttonCheckIn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="buttonCheckIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 69</value>
+  </data>
+  <data name="buttonCheckIn.Text" xml:space="preserve">
+    <value>Check In</value>
+  </data>
+  <data name="buttonCheckOut.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="buttonCheckOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 69</value>
+  </data>
+  <data name="buttonCheckOut.Text" xml:space="preserve">
+    <value>Check Out</value>
+  </data>
+  <data name="buttonLoadAnhTruoc.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="buttonLoadAnhTruoc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 56</value>
+  </data>
+  <data name="buttonLoadAnhTruoc.Text" xml:space="preserve">
+    <value>Load Image</value>
+  </data>
+  <data name="buttonLoadAnhSau.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="buttonLoadAnhSau.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 56</value>
+  </data>
+  <data name="buttonLoadAnhSau.Text" xml:space="preserve">
+    <value>Load Image</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 79</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 25</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>MT CheckOut:</value>
+  </data>
+  <data name="comboBoxMaTheXeCheckOut.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="comboBoxMaTheXeCheckOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 33</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1046, 11</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>604, 426</value>
+    <value>1208, 766</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Check In / Out </value>
+    <value>CheckInOutForm</value>
   </data>
 </root>
