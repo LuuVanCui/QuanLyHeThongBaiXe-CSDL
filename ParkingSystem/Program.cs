@@ -10,7 +10,7 @@ namespace ParkingSystem
 {
     public static class Globals
     {
-        public static string serverName = "172.16.2.209";
+        public static string serverName = "192.168.44.49";
         public static string username = "user1";
         public static string password = "1234";
         public static void makeUpViews(DataGridView gridView)
