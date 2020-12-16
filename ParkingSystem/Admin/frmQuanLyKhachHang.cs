@@ -17,6 +17,8 @@ namespace ParkingSystem.Admin
         public frmQuanLyKhachHang()
         {
             InitializeComponent();
+            fillComboBoxBaiXe();
+
         }
         KhachHang kh = new KhachHang();
         private void frmQuanLyKhachHang_Load(object sender, EventArgs e)
@@ -38,6 +40,14 @@ namespace ParkingSystem.Admin
             {
                 MessageBox.Show(ex.Message, "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        void fillComboBoxBaiXe()
+        {
+            String sql = "select * from view_BaiXe";
+            comboBoxbaiXe.ValueMember = "baixe_id";
+            comboBoxbaiXe.DisplayMember = "ten";
+            comboBoxbaiXe.DataSource = Globals.getData(new SqlCommand(sql));
         }
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="Admin\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\frmBaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmBaiXe.Designer.cs">
+      <DependentUpon>frmBaiXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\frmPhanQuyen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </Compile>
     <EmbeddedResource Include="Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmBaiXe.resx">
+      <DependentUpon>frmBaiXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLGiaTien.resx">
       <DependentUpon>frmQLGiaTien.cs</DependentUpon>

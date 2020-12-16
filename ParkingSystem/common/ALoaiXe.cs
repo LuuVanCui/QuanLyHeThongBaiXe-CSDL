@@ -10,10 +10,12 @@ namespace ParkingSystem.common
 {
     class ALoaiXe
     {
-        My_DB mydb = new My_DB("192.168.56.1", "hieu02", "12345678");
+        // My_DB mydb = new My_DB("DESKTOP", "hieu02", "12345678");
+        //My_DB mydb = new My_DB(Globals.serverName,Globals.username,Globals.password);
+        My_DB mydb = new My_DB();
         public DataTable getAllLoaiXe()
         {
-            SqlCommand cmd = new SqlCommand("select * from view_LoaiXe");
+            SqlCommand cmd = new SqlCommand("select * from view_Loaixe");
             cmd.Connection = mydb.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
