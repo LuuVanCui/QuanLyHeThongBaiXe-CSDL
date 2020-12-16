@@ -52,15 +52,5 @@ namespace ParkingSystem.NhanVien
                 pictureBoxAnhSau.Image = Image.FromFile(opf.FileName);
             }
         }
-
-        private void buttonCheckIn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonCheckOut_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
