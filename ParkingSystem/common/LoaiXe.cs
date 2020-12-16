@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ParkingSystem.common
 {
-    class ALoaiXe
+    class LoaiXe
     {
         // My_DB mydb = new My_DB("DESKTOP", "hieu02", "12345678");
         //My_DB mydb = new My_DB(Globals.serverName,Globals.username,Globals.password);
@@ -25,7 +25,7 @@ namespace ParkingSystem.common
 
         public bool insertLoaiXe(String maLoaiXe, String tenLoaiXe)
         {
-            SqlCommand command = new SqlCommand("exec p_insertUpdateLoaiXe 'insert',@ma, @ten", mydb.getConnection);
+            SqlCommand command = new SqlCommand("exec p_LoaiXe 'insert',@ma, @ten", mydb.getConnection);
             command.Parameters.Add("@ma", SqlDbType.Char).Value = maLoaiXe;
             command.Parameters.Add("@ten", SqlDbType.NVarChar).Value = tenLoaiXe;
 
@@ -45,7 +45,7 @@ namespace ParkingSystem.common
 
         public bool updateLoaiXe(String maLoaiXe, String tenLoaiXe)
         {
-            SqlCommand command = new SqlCommand("exec p_insertUpdateLoaiXe 'update',@ma, @ten", mydb.getConnection);
+            SqlCommand command = new SqlCommand("exec p_LoaiXe 'update',@ma, @ten", mydb.getConnection);
             command.Parameters.Add("@ma", SqlDbType.Char).Value = maLoaiXe;
             command.Parameters.Add("@ten", SqlDbType.NVarChar).Value = tenLoaiXe;
 
@@ -63,11 +63,11 @@ namespace ParkingSystem.common
 
         }
 
-        public bool deleteLoaiXe(String maLoaiXe, String tenLoaiXe = "")
+        public bool deleteLoaiXe(String maLoaiXe)
         {
-            SqlCommand command = new SqlCommand("exec p_insertUpdateLoaiXe 'delete',@ma, @ten", mydb.getConnection);
+            SqlCommand command = new SqlCommand("exec p_LoaiXe 'delete',@ma", mydb.getConnection);
             command.Parameters.Add("@ma", SqlDbType.Char).Value = maLoaiXe;
-            command.Parameters.Add("@ten", SqlDbType.NVarChar).Value = tenLoaiXe;
+          
 
             mydb.openConnection();
             if (command.ExecuteNonQuery() == 1)

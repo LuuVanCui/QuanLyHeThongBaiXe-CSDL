@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ParkingSystem.common
 {
@@ -76,6 +77,13 @@ namespace ParkingSystem.common
             command.Parameters.Add("@AnhSau", System.Data.SqlDbType.Image).Value = anhSau.ToArray();
             command.Parameters.Add("@MaLoaiXe", SqlDbType.Char).Value = maLoaiXe;
             command.Parameters.Add("@baixe_id", SqlDbType.Char).Value = baixeId;
+        }
+        
+        public bool deleteXe(String bienSo, DateTime tgVao)
+        {
+            SqlCommand command = new SqlCommand("exec p_deleteXe @bs, @time", mydb.getConnection);
+            command.Parameters.Add("@bs", SqlDbType.Char).Value = bienSo;
+            command.Parameters.Add("@time", SqlDbType.DateTime).Value = tgVao;
 
             mydb.openConnection();
             if (command.ExecuteNonQuery() == 1)

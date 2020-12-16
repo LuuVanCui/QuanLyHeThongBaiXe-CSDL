@@ -20,8 +20,8 @@ namespace ParkingSystem
 
         private void buttonQLBaiXe_Click(object sender, EventArgs e)
         {
-            frmQLXe xe = new frmQLXe();
-            xe.ShowDialog();
+            frmBaiXe bx = new frmBaiXe();
+            bx.ShowDialog();
         }
 
         private void buttonBLNhanVien_Click(object sender, EventArgs e)
@@ -59,9 +59,10 @@ namespace ParkingSystem
             lx.ShowDialog();
         }
 
-        private void buttonCapQuyen_Click(object sender, EventArgs e)
+        private void buttonQLXe_Click(object sender, EventArgs e)
         {
-
+            frmQLXe xe = new frmQLXe();
+            xe.ShowDialog();
         }
     }
 }

@@ -49,13 +49,14 @@
             // buttonXoa
             // 
             this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonXoa.Location = new System.Drawing.Point(940, 245);
+            this.buttonXoa.Location = new System.Drawing.Point(940, 253);
             this.buttonXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonXoa.Name = "buttonXoa";
-            this.buttonXoa.Size = new System.Drawing.Size(208, 32);
+            this.buttonXoa.Size = new System.Drawing.Size(208, 50);
             this.buttonXoa.TabIndex = 22;
             this.buttonXoa.Text = "Xóa";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonSua
             // 
@@ -63,21 +64,23 @@
             this.buttonSua.Location = new System.Drawing.Point(940, 199);
             this.buttonSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSua.Name = "buttonSua";
-            this.buttonSua.Size = new System.Drawing.Size(208, 32);
+            this.buttonSua.Size = new System.Drawing.Size(208, 50);
             this.buttonSua.TabIndex = 23;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click_1);
             // 
             // buttonThem
             // 
             this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonThem.Location = new System.Drawing.Point(940, 158);
+            this.buttonThem.Location = new System.Drawing.Point(940, 145);
             this.buttonThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonThem.Name = "buttonThem";
-            this.buttonThem.Size = new System.Drawing.Size(208, 32);
+            this.buttonThem.Size = new System.Drawing.Size(208, 50);
             this.buttonThem.TabIndex = 24;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click_1);
             // 
             // dataGridView1
             // 
@@ -88,6 +91,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1137, 282);
             this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -189,6 +193,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(330, 30);
             this.textBoxSearch.TabIndex = 27;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged_1);
             // 
             // frmBaiXe
             // 

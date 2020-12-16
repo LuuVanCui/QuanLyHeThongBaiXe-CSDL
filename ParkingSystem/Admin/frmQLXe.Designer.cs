@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonXoa = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1277, 566);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonXoa
             // 
@@ -78,7 +79,7 @@
             this.buttonXoa.TabIndex = 19;
             this.buttonXoa.Text = "Xóa Xe";
             this.buttonXoa.UseVisualStyleBackColor = true;
-       
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click_1);
             // 
             // label11
             // 
@@ -88,6 +89,15 @@
             this.label11.Size = new System.Drawing.Size(79, 20);
             this.label11.TabIndex = 18;
             this.label11.Text = "Số lượng:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(288, 259);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 20);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Tìm kiếm:";
             // 
             // label10
             // 
@@ -145,6 +155,7 @@
             this.comboBoxLoaiXe.Name = "comboBoxLoaiXe";
             this.comboBoxLoaiXe.Size = new System.Drawing.Size(237, 28);
             this.comboBoxLoaiXe.TabIndex = 15;
+            this.comboBoxLoaiXe.SelectedIndexChanged += new System.EventHandler(this.comboBoxLoaiXe_SelectedIndexChanged_1);
             // 
             // comboBoxBaiXe
             // 
@@ -156,6 +167,7 @@
             this.comboBoxBaiXe.Name = "comboBoxBaiXe";
             this.comboBoxBaiXe.Size = new System.Drawing.Size(233, 28);
             this.comboBoxBaiXe.TabIndex = 17;
+            this.comboBoxBaiXe.SelectedIndexChanged += new System.EventHandler(this.comboBoxBaiXe_SelectedIndexChanged_1);
             // 
             // label1
             // 
@@ -185,15 +197,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1199, 256);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 259);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Tìm kiếm:";
             // 
             // frmQLXe
             // 

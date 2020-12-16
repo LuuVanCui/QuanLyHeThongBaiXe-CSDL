@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonQLGiaTien = new System.Windows.Forms.Button();
             this.buttonQLDoanhThu = new System.Windows.Forms.Button();
-            this.buttonCapQuyen = new System.Windows.Forms.Button();
+            this.buttonQLXe = new System.Windows.Forms.Button();
             this.buttonBLNhanVien = new System.Windows.Forms.Button();
             this.buttonQLLoaiXe = new System.Windows.Forms.Button();
             this.buttonQLBaiXe = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             // 
             this.panel1.Controls.Add(this.buttonQLGiaTien);
             this.panel1.Controls.Add(this.buttonQLDoanhThu);
-            this.panel1.Controls.Add(this.buttonCapQuyen);
+            this.panel1.Controls.Add(this.buttonQLXe);
             this.panel1.Controls.Add(this.buttonBLNhanVien);
             this.panel1.Controls.Add(this.buttonQLLoaiXe);
             this.panel1.Controls.Add(this.buttonQLBaiXe);
@@ -68,7 +68,7 @@
             // 
             // buttonQLDoanhThu
             // 
-            this.buttonQLDoanhThu.Location = new System.Drawing.Point(698, 73);
+            this.buttonQLDoanhThu.Location = new System.Drawing.Point(1004, 295);
             this.buttonQLDoanhThu.Name = "buttonQLDoanhThu";
             this.buttonQLDoanhThu.Size = new System.Drawing.Size(226, 140);
             this.buttonQLDoanhThu.TabIndex = 0;
@@ -76,19 +76,19 @@
             this.buttonQLDoanhThu.UseVisualStyleBackColor = true;
             this.buttonQLDoanhThu.Click += new System.EventHandler(this.buttonQLDoanhThu_Click);
             // 
-            // buttonCapQuyen
+            // buttonQLXe
             // 
-            this.buttonCapQuyen.Location = new System.Drawing.Point(1004, 295);
-            this.buttonCapQuyen.Name = "buttonCapQuyen";
-            this.buttonCapQuyen.Size = new System.Drawing.Size(226, 140);
-            this.buttonCapQuyen.TabIndex = 0;
-            this.buttonCapQuyen.Text = "Cấp quyền";
-            this.buttonCapQuyen.UseVisualStyleBackColor = true;
-            this.buttonCapQuyen.Click += new System.EventHandler(this.buttonCapQuyen_Click);
+            this.buttonQLXe.Location = new System.Drawing.Point(101, 73);
+            this.buttonQLXe.Name = "buttonQLXe";
+            this.buttonQLXe.Size = new System.Drawing.Size(226, 140);
+            this.buttonQLXe.TabIndex = 0;
+            this.buttonQLXe.Text = "Quản lý xe trong bãi";
+            this.buttonQLXe.UseVisualStyleBackColor = true;
+            this.buttonQLXe.Click += new System.EventHandler(this.buttonQLXe_Click);
             // 
             // buttonBLNhanVien
             // 
-            this.buttonBLNhanVien.Location = new System.Drawing.Point(414, 73);
+            this.buttonBLNhanVien.Location = new System.Drawing.Point(698, 73);
             this.buttonBLNhanVien.Name = "buttonBLNhanVien";
             this.buttonBLNhanVien.Size = new System.Drawing.Size(226, 140);
             this.buttonBLNhanVien.TabIndex = 0;
@@ -108,7 +108,7 @@
             // 
             // buttonQLBaiXe
             // 
-            this.buttonQLBaiXe.Location = new System.Drawing.Point(101, 73);
+            this.buttonQLBaiXe.Location = new System.Drawing.Point(414, 73);
             this.buttonQLBaiXe.Name = "buttonQLBaiXe";
             this.buttonQLBaiXe.Size = new System.Drawing.Size(226, 140);
             this.buttonQLBaiXe.TabIndex = 0;
@@ -154,7 +154,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonQLGiaTien;
         private System.Windows.Forms.Button buttonQLDoanhThu;
-        private System.Windows.Forms.Button buttonCapQuyen;
+        private System.Windows.Forms.Button buttonQLXe;
         private System.Windows.Forms.Button buttonBLNhanVien;
         private System.Windows.Forms.Button buttonQLLoaiXe;
         private System.Windows.Forms.Button buttonQLBaiXe;
