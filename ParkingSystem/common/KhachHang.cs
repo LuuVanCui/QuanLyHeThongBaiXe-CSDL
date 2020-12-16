@@ -10,7 +10,8 @@ namespace ParkingSystem.common
 {
     class KhachHang
     {
-        My_DB mydb = new My_DB(Globals.serverName, Globals.username, Globals.password);
+        //My_DB mydb = new My_DB(Globals.serverName, Globals.username, Globals.password);
+        My_DB mydb = new My_DB();
         public bool insertKhachHang(string name, string phone)
         {
             string query = "exec p_InsertKhachHang @name, @phone";

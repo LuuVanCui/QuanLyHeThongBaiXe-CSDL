@@ -10,9 +10,9 @@ namespace ParkingSystem
 {
     public static class Globals
     {
-        public static string serverName = "172.16.2.209";
-        public static string username = "user1";
-        public static string password = "1234";
+        //public static string serverName = "192.168.44.49";
+        //public static string username = "user1";
+        //public static string password = "1234";
         public static void makeUpViews(DataGridView gridView)
         {
             gridView.ReadOnly = true;
@@ -21,7 +21,8 @@ namespace ParkingSystem
 
         public static DataTable getData(SqlCommand cmd)
         {
-            My_DB mydb = new My_DB(serverName, username, password);
+            //My_DB mydb = new My_DB(serverName, username, password);
+            My_DB mydb = new My_DB();
             cmd.Connection = mydb.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();

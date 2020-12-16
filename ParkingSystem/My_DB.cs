@@ -13,8 +13,8 @@ namespace ParkingSystem
 
         public My_DB()
         {
-            // string cs = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=PARKING;Integrated Security=True";
-            string cs = @"Data Source=DESKTOP-8AHUGCC;Initial Catalog=PARKING;Integrated Security=True";
+            string cs = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=PARKING;Integrated Security=True";
+           // string cs = @"Data Source=DESKTOP-8AHUGCC;Initial Catalog=PARKING;Integrated Security=True";
             con.ConnectionString = cs;
         }
 
