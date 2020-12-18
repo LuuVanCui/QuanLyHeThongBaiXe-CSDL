@@ -63,3 +63,27 @@ as
 	select * from BaiXe
 	delete from BaiXe
 	insert into BaiXe values('spktE', N'Bãi Sư Phạm Kỹ Thuật Khu E', N'Khu E, DH SPKT, Thủ Đức, HCM', -500)
+
+
+
+-- Trigger cập nhật trạng thái của thẻ xe khi xe vào
+create trigger tr_capNhatTrangThaiXeRaVao
+	on Xe after insert, update as
+	begin
+		declare @mathexe char(10), @tgRa datetime
+		select @mathexe = MaTheXe, @tgRa = ThoiGianRa from inserted
+		if (@tgRa is null)
+			begin
+				update TheXe
+				set TrangThai='Đang sử dụng'
+				where MaTheXe = @mathexe
+				print 'Đã cập nhật trạng thái của xe vào'
+			end
+		else 
+			begin
+				update TheXe
+				set TrangThai='Sẵn sàng sử dụng'
+				where MaTheXe = @mathexe
+				print 'Đã cập nhật trạng thái của xe ra'
+			end
+	end

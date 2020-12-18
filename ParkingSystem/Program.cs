@@ -13,6 +13,8 @@ namespace ParkingSystem
         //public static string serverName = "192.168.44.49";
         //public static string username = "user1";
         //public static string password = "1234";
+
+        public static string baixeId = "spktB";
         public static void makeUpViews(DataGridView gridView)
         {
             gridView.ReadOnly = true;
