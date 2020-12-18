@@ -43,13 +43,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxMaTheXeCheckOut = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.buttonLoadAnhTruoc = new System.Windows.Forms.Button();
-            this.buttonLoadAnhSau = new System.Windows.Forms.Button();
-            this.buttonCheckOut = new System.Windows.Forms.Button();
             this.buttonCheckIn = new System.Windows.Forms.Button();
+            this.buttonCheckOut = new System.Windows.Forms.Button();
+            this.buttonLoadAnhSau = new System.Windows.Forms.Button();
+            this.buttonLoadAnhTruoc = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnhTruoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnhSau)).BeginInit();
             this.panel1.SuspendLayout();
@@ -150,46 +150,49 @@
             this.panel1.Controls.Add(this.comboBoxMaTheXeCheckIn);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // buttonLoadAnhTruoc
-            // 
-            resources.ApplyResources(this.buttonLoadAnhTruoc, "buttonLoadAnhTruoc");
-            this.buttonLoadAnhTruoc.Name = "buttonLoadAnhTruoc";
-            this.buttonLoadAnhTruoc.UseVisualStyleBackColor = true;
-            // 
-            // buttonLoadAnhSau
-            // 
-            resources.ApplyResources(this.buttonLoadAnhSau, "buttonLoadAnhSau");
-            this.buttonLoadAnhSau.Name = "buttonLoadAnhSau";
-            this.buttonLoadAnhSau.UseVisualStyleBackColor = true;
-            // 
-            // buttonCheckOut
-            // 
-            resources.ApplyResources(this.buttonCheckOut, "buttonCheckOut");
-            this.buttonCheckOut.Name = "buttonCheckOut";
-            this.buttonCheckOut.UseVisualStyleBackColor = true;
             // 
             // buttonCheckIn
             // 
             resources.ApplyResources(this.buttonCheckIn, "buttonCheckIn");
             this.buttonCheckIn.Name = "buttonCheckIn";
             this.buttonCheckIn.UseVisualStyleBackColor = true;
+            this.buttonCheckIn.Click += new System.EventHandler(this.buttonCheckIn_Click);
+            // 
+            // buttonCheckOut
+            // 
+            resources.ApplyResources(this.buttonCheckOut, "buttonCheckOut");
+            this.buttonCheckOut.Name = "buttonCheckOut";
+            this.buttonCheckOut.UseVisualStyleBackColor = true;
+            this.buttonCheckOut.Click += new System.EventHandler(this.buttonCheckOut_Click);
+            // 
+            // buttonLoadAnhSau
+            // 
+            resources.ApplyResources(this.buttonLoadAnhSau, "buttonLoadAnhSau");
+            this.buttonLoadAnhSau.Name = "buttonLoadAnhSau";
+            this.buttonLoadAnhSau.UseVisualStyleBackColor = true;
+            this.buttonLoadAnhSau.Click += new System.EventHandler(this.buttonLoadAnhSau_Click);
+            // 
+            // buttonLoadAnhTruoc
+            // 
+            resources.ApplyResources(this.buttonLoadAnhTruoc, "buttonLoadAnhTruoc");
+            this.buttonLoadAnhTruoc.Name = "buttonLoadAnhTruoc";
+            this.buttonLoadAnhTruoc.UseVisualStyleBackColor = true;
+            this.buttonLoadAnhTruoc.Click += new System.EventHandler(this.buttonLoadAnhTruoc_Click);
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
             // CheckInOutForm
             // 
