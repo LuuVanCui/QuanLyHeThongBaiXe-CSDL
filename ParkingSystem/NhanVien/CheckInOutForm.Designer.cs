@@ -126,6 +126,7 @@
             resources.ApplyResources(this.comboBoxMaTheXeCheckOut, "comboBoxMaTheXeCheckOut");
             this.comboBoxMaTheXeCheckOut.FormattingEnabled = true;
             this.comboBoxMaTheXeCheckOut.Name = "comboBoxMaTheXeCheckOut";
+            this.comboBoxMaTheXeCheckOut.DropDownClosed += new System.EventHandler(this.comboBoxMaTheXeCheckOut_DropDownClosed);
             // 
             // panel1
             // 
