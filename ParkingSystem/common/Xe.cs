@@ -39,6 +39,28 @@ namespace ParkingSystem.common
             return table;
         }
 
+        public bool updateXe(string maTheXe, string bienSo, DateTime thoiGianRa)
+        {
+            string query = "exec p_insertUpdateXe 'update', " + Globals.baixeId + ", @mathexe, @bienso, @thoigianra";
+            SqlCommand command = new SqlCommand(query, mydb.getConnection);
+
+            command.Parameters.Add("@mathexe", SqlDbType.Char).Value = maTheXe;
+            command.Parameters.Add("@bienso", System.Data.SqlDbType.VarChar).Value = bienSo;
+            command.Parameters.Add("@ThoiGianRa", SqlDbType.DateTime).Value = thoiGianRa;
+
+            mydb.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
         public bool insertUpdateXe(string statementType, string bienSo,
             MemoryStream anhTruoc, MemoryStream anhSau, DateTime thoiGianVao, 
             DateTime thoiGianRa, string maTheXe, string maLoaiXe = null, string baixeId = null)

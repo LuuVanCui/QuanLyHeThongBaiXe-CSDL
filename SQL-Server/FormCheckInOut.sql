@@ -28,16 +28,16 @@ create function f_layTenLoaiXe(@maloaixe char(10))
 
 
 -- Thủ tục insert và update xe ra vào
-create proc [dbo].[p_insertUpdateXe] 
+alter proc [dbo].[p_insertUpdateXe] 
 	@statementType varchar(20),
+	@baixe_id char(10),
 	@MaTheXe char(10),
 	@BienSo varchar(15),
 	@ThoiGianRa datetime,
-	@ThoiGianVao datetime,
-	@AnhTruoc image,
-	@AnhSau image,
-	@MaLoaiXe char(10),
-	@baixe_id char(10)
+	@ThoiGianVao datetime = null,
+	@AnhTruoc image = null,
+	@AnhSau image = null,
+	@MaLoaiXe char(10) = null
 as
 	if(@statementType ='insert')
 		begin
@@ -50,3 +50,6 @@ as
 		end
 
 exec p_insertUpdateXe 'update', 'OT0125    ', '1234', '2020-12-18 16:05:23.540', '2020-12-18 16:05:23.540', '1', '1', '1', '1'
+
+-- test xe ra: chỉ cần truyền vào các tham số: method, baixe_id, mathexe, bienso, thoigianra
+exec p_insertUpdateXe 'update', 'spktB     ', 'OT0125    ', '1234', '2020-12-18 16:05:23.540'
