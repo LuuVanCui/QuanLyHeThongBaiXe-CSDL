@@ -68,7 +68,7 @@ create table BangGia(
 )
 
 create table Xe(
-	BienSo int,
+	BienSo varchar(10),
 	AnhTruoc image,
 	AnhSau image,
 	ThoiGianVao datetime,
@@ -129,24 +129,3 @@ create table Quyen(
 )
 
 
--- Trigger cập nhật trạng thái của thẻ xe khi xe vào của khách vãng lai
-create trigger tr_capNhatTrangThaiXeRaVao
-	on Xe after insert, update as
-	begin
-		declare @mathexe char(10), @tgRa datetime
-		select @mathexe = MaTheXe, @tgRa = ThoiGianRa from inserted
-		if (@tgRa is null)
-			begin
-				update TheXe
-				set TrangThai='Đang sử dụng'
-				where MaTheXe = @mathexe
-				print 'Đã cập nhật trạng thái của xe vào'
-			end
-		else 
-			begin
-				update TheXe
-				set TrangThai='Sẵn sàng sử dụng'
-				where MaTheXe = @mathexe
-				print 'Đã cập nhật trạng thái của xe ra'
-			end
-	end

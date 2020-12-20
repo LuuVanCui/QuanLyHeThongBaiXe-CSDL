@@ -50,25 +50,30 @@
             // 
             // buttonLogout
             // 
+            this.buttonLogout.BackColor = System.Drawing.Color.Red;
+            this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonLogout.Location = new System.Drawing.Point(628, 26);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(121, 73);
             this.buttonLogout.TabIndex = 1;
             this.buttonLogout.Text = "Logout";
-            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // labelWelcome
             // 
             this.labelWelcome.AutoSize = true;
+            this.labelWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWelcome.Location = new System.Drawing.Point(41, 52);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(75, 20);
+            this.labelWelcome.Size = new System.Drawing.Size(133, 32);
             this.labelWelcome.TabIndex = 0;
             this.labelWelcome.Text = "Welcome";
             // 
             // buttonTheXe
             // 
+            this.buttonTheXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTheXe.Location = new System.Drawing.Point(44, 140);
             this.buttonTheXe.Name = "buttonTheXe";
             this.buttonTheXe.Size = new System.Drawing.Size(321, 129);
@@ -79,6 +84,7 @@
             // 
             // buttonKhachHang
             // 
+            this.buttonKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKhachHang.Location = new System.Drawing.Point(424, 140);
             this.buttonKhachHang.Name = "buttonKhachHang";
             this.buttonKhachHang.Size = new System.Drawing.Size(324, 129);
@@ -89,6 +95,7 @@
             // 
             // buttonDangKy
             // 
+            this.buttonDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDangKy.Location = new System.Drawing.Point(424, 302);
             this.buttonDangKy.Name = "buttonDangKy";
             this.buttonDangKy.Size = new System.Drawing.Size(324, 126);
@@ -99,6 +106,7 @@
             // 
             // buttonCheckInOut
             // 
+            this.buttonCheckInOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCheckInOut.Location = new System.Drawing.Point(44, 302);
             this.buttonCheckInOut.Name = "buttonCheckInOut";
             this.buttonCheckInOut.Size = new System.Drawing.Size(321, 126);

@@ -377,6 +377,10 @@
   <data name="pictureBoxAnhTruoc.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 122</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBoxAnhTruoc.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
   <data name="pictureBoxAnhTruoc.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -397,6 +401,9 @@
   </data>
   <data name="pictureBoxAnhSau.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 122</value>
+  </data>
+  <data name="pictureBoxAnhSau.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
   <data name="pictureBoxAnhSau.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -506,7 +513,6 @@
   <data name="&gt;&gt;buttonCheckOut.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonLoadAnhSau.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
