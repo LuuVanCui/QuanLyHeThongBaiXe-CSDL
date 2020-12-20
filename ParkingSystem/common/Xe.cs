@@ -61,19 +61,16 @@ namespace ParkingSystem.common
             }
         }
 
-        public bool insertUpdateXe(string statementType, string bienSo,
-            MemoryStream anhTruoc, MemoryStream anhSau, DateTime thoiGianVao, 
-            DateTime thoiGianRa, string maTheXe, string maLoaiXe = null, string baixeId = null)
+        public bool insertXe(string bienSo, MemoryStream anhTruoc, MemoryStream anhSau, DateTime thoiGianVao, 
+            string maTheXe, string maLoaiXe, string baixeId)
         {
-            string query = "exec p_insertUpdateXe @statementType, @MaTheXe, @BienSo, " +
-                "@ThoiGianRa, @ThoiGianVao, @AnhTruoc, @AnhSau, " +
-                "@MaLoaiXe, @baixe_id";
+            string query = "exec p_insertUpdateXe 'insert', @baixe_id, @MaTheXe, " +
+                "@BienSo, null, @ThoiGianVao, @AnhTruoc, " +
+                "@AnhSau, @MaLoaiXe";
             SqlCommand command = new SqlCommand(query, mydb.getConnection);
 
-            command.Parameters.Add("@statementType", System.Data.SqlDbType.VarChar).Value = statementType;
             command.Parameters.Add("@MaTheXe", SqlDbType.Char).Value = maTheXe;
             command.Parameters.Add("@BienSo", System.Data.SqlDbType.VarChar).Value = bienSo;
-            command.Parameters.Add("@ThoiGianRa", SqlDbType.DateTime).Value = thoiGianRa;
             command.Parameters.Add("@ThoiGianVao", SqlDbType.DateTime).Value = thoiGianVao;
             command.Parameters.Add("@AnhTruoc", System.Data.SqlDbType.Image).Value = anhTruoc.ToArray();
             command.Parameters.Add("@AnhSau", System.Data.SqlDbType.Image).Value = anhSau.ToArray();

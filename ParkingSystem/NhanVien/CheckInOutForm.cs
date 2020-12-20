@@ -61,7 +61,7 @@ namespace ParkingSystem.NhanVien
         {
             // get input data
             string maTheXe = comboBoxMaTheXeCheckIn.Text;
-            string maLoaiXe = comboBoxLoaiXe.ValueMember;
+            string maLoaiXe = comboBoxLoaiXe.SelectedValue.ToString();
             string bienSo = textBoxBienSo.Text;
             MemoryStream anhTruoc = new MemoryStream();
             MemoryStream anhSau = new MemoryStream();
@@ -70,7 +70,7 @@ namespace ParkingSystem.NhanVien
             DateTime thoiGianVao = DateTime.Now;
             try
             {
-                xe.insertUpdateXe("insert", bienSo, anhTruoc, anhSau, thoiGianVao, DateTime.Now, maTheXe, maLoaiXe, Globals.baixeId);
+                xe.insertXe(bienSo, anhTruoc, anhSau, thoiGianVao, maTheXe, maLoaiXe, Globals.baixeId);
                 MessageBox.Show("Check In thành công!", "Check In", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch(Exception ex)
             {
@@ -85,16 +85,11 @@ namespace ParkingSystem.NhanVien
             try
             {
                 string maTheXe = comboBoxMaTheXeCheckIn.Text;
-                string maLoaiXe = comboBoxLoaiXe.ValueMember;
                 string bienSo = textBoxBienSo.Text;
-                MemoryStream anhTruoc = new MemoryStream();
-                MemoryStream anhSau = new MemoryStream();
-                pictureBoxAnhTruoc.Image.Save(anhTruoc, pictureBoxAnhTruoc.Image.RawFormat);
-                pictureBoxAnhSau.Image.Save(anhSau, pictureBoxAnhSau.Image.RawFormat);
-                DateTime thoiGianVao = DateTime.Now;
+                DateTime thoiGianRa = DateTime.Now;
                 try
                 {
-                    xe.insertUpdateXe("update", bienSo, anhTruoc, anhSau, thoiGianVao, thoiGianVao, maTheXe, maLoaiXe, Globals.baixeId);
+                    xe.updateXe(maTheXe, bienSo, thoiGianRa);
                     MessageBox.Show("Check Out thành công!", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
