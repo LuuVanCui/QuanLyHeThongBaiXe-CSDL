@@ -75,15 +75,15 @@ create trigger tr_capNhatTrangThaiXeRaVao
 		if (@tgRa is null)
 			begin
 				update TheXe
-				set TrangThai='Đang sử dụng'
+				set TrangThai= N'Đang sử dụng'
 				where MaTheXe = @mathexe
-				print 'Đã cập nhật trạng thái của xe vào'
+				print N'Đã cập nhật trạng thái của xe vào'
 			end
 		else 
 			begin
 				update TheXe
-				set TrangThai='Sẵn sàng sử dụng'
+				set TrangThai=N'Sẵn sàng sử dụng'
 				where MaTheXe = @mathexe
-				print 'Đã cập nhật trạng thái của xe ra'
+				print N'Đã cập nhật trạng thái của xe ra'
 			end
 	end
