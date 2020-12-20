@@ -68,7 +68,7 @@ create table BangGia(
 )
 
 create table Xe(
-	BienSo int,
+	BienSo varchar(10),
 	AnhTruoc image,
 	AnhSau image,
 	ThoiGianVao datetime,
