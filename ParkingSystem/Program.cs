@@ -19,6 +19,7 @@ namespace ParkingSystem
         {
             gridView.ReadOnly = true;
             gridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gridView.AllowUserToAddRows = false;
         }
 
         public static DataTable getData(SqlCommand cmd)

@@ -1,4 +1,8 @@
-﻿-- Insert table Khách Hàng 
+﻿
+select * from DangKy
+
+
+-- Insert table Khách Hàng 
 create proc p_InsertKhachHang @id char(10), @name nvarchar(50), @phone char(15)
 	as begin
 		insert into KhachHang

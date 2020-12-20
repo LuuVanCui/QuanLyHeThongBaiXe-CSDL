@@ -42,10 +42,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(381, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 37);
+            this.label1.Size = new System.Drawing.Size(418, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Khách Hàng";
             // 
@@ -102,10 +102,10 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAdd.Location = new System.Drawing.Point(698, 97);
+            this.buttonAdd.Location = new System.Drawing.Point(698, 106);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(315, 64);
+            this.buttonAdd.Size = new System.Drawing.Size(315, 45);
             this.buttonAdd.TabIndex = 5;
             this.buttonAdd.Text = "Thêm";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             this.buttonEdit.Location = new System.Drawing.Point(698, 177);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(315, 64);
+            this.buttonEdit.Size = new System.Drawing.Size(315, 45);
             this.buttonEdit.TabIndex = 5;
             this.buttonEdit.Text = "Sửa";
             this.buttonEdit.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 611);
+            this.ClientSize = new System.Drawing.Size(1061, 607);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxPhone);
@@ -138,6 +138,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "KhachHangForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách Hàng";
             this.Load += new System.EventHandler(this.KhachHangForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();

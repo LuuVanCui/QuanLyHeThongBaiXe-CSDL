@@ -81,6 +81,7 @@
             this.Controls.Add(this.dataGridViewTheXe);
             this.Controls.Add(this.label1);
             this.Name = "TheXeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thẻ xe";
             this.Load += new System.EventHandler(this.TheXeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTheXe)).EndInit();
