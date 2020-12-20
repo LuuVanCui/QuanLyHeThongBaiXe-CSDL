@@ -46,5 +46,11 @@ namespace ParkingSystem
             DangKyForm dangKyForm = new DangKyForm();
             dangKyForm.ShowDialog(this);
         }
+
+        private void buttonBangGia_Click(object sender, EventArgs e)
+        {
+            BangGiaForm bangGiaForm = new BangGiaForm();
+            bangGiaForm.ShowDialog(this);
+        }
     }
 }
