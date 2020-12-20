@@ -84,7 +84,7 @@ namespace ParkingSystem.NhanVien
             // get input data
             try
             {
-                string maTheXe = comboBoxMaTheXeCheckIn.Text;
+                string maTheXe = comboBoxMaTheXeCheckOut.Text;
                 string bienSo = textBoxBienSo.Text;
                 DateTime thoiGianRa = DateTime.Now;
                 try
