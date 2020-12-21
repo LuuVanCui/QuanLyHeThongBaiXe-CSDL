@@ -61,5 +61,14 @@ namespace ParkingSystem.NhanVien
                 MessageBox.Show(ex.Message, "Cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string searchQuery = textBoxSearch.Text;
+            string query = "select * from f_timKiemKhachHang(@query)";
+            SqlCommand command = new SqlCommand(query);
+            command.Parameters.Add("@query", SqlDbType.NVarChar).Value = searchQuery;
+            dataGridViewCustomer.DataSource = Globals.getData(command);
+        }
     }
 }

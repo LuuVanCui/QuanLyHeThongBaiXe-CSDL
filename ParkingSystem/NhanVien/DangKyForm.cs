@@ -25,12 +25,12 @@ namespace ParkingSystem.NhanVien
         {
             DataTable tableKhachHang = Globals.getData(new SqlCommand("select * from view_KhachHang"));
             comboBoxMaKH.DataSource = tableKhachHang;
-            comboBoxMaKH.DisplayMember = "kh_id";
-            comboBoxMaKH.ValueMember = "kh_id";
+            comboBoxMaKH.DisplayMember = "Mã KH";
+            comboBoxMaKH.ValueMember = "Mã KH";
 
             comboBoxTenKH.DataSource = tableKhachHang;
-            comboBoxTenKH.DisplayMember = "ten";
-            comboBoxTenKH.ValueMember = "ten";
+            comboBoxTenKH.DisplayMember = "Tên KH";
+            comboBoxTenKH.ValueMember = "Tên KH";
 
             comboBoxLoaiTheXe.DataSource = Globals.getData(new SqlCommand("select * from f_layLoaiTheXeDangKy()"));
             comboBoxLoaiTheXe.DisplayMember = "TenLoaiThe";
