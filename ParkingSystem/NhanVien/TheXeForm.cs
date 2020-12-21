@@ -24,5 +24,14 @@ namespace ParkingSystem
             string query = "select * from view_NVXemTheXe";
             dataGridViewTheXe.DataSource = Globals.getData(new SqlCommand(query));
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string searchQuery = textBoxSearch.Text;
+            string query = "select * from f_timKiemTheXe(@query)";
+            SqlCommand command = new SqlCommand(query);
+            command.Parameters.Add("@query", SqlDbType.NVarChar).Value = searchQuery;
+            dataGridViewTheXe.DataSource = Globals.getData(command);
+        }
     }
 }
