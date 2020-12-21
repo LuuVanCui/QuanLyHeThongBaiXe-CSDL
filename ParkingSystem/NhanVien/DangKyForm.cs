@@ -85,6 +85,7 @@ namespace ParkingSystem.NhanVien
             {
                 MessageBox.Show(ex.Message, "Đăng ký", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            DangKyForm_Load(sender, e);
         }
     }
 }

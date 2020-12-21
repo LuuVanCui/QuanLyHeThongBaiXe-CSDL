@@ -73,7 +73,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewCustomer.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(38, 311);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(38, 314);
             this.dataGridViewCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -93,39 +93,39 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(86, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 29);
+            this.label2.Size = new System.Drawing.Size(86, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên KH:";
             // 
             // textBoxCustomerName
             // 
-            this.textBoxCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCustomerName.Location = new System.Drawing.Point(225, 112);
+            this.textBoxCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCustomerName.Location = new System.Drawing.Point(178, 112);
             this.textBoxCustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCustomerName.Name = "textBoxCustomerName";
-            this.textBoxCustomerName.Size = new System.Drawing.Size(438, 35);
+            this.textBoxCustomerName.Size = new System.Drawing.Size(485, 30);
             this.textBoxCustomerName.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(113, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 29);
+            this.label3.Size = new System.Drawing.Size(59, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "SĐT:";
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(225, 177);
+            this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPhone.Location = new System.Drawing.Point(178, 177);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(438, 35);
+            this.textBoxPhone.Size = new System.Drawing.Size(485, 30);
             this.textBoxPhone.TabIndex = 4;
             // 
             // buttonAdd
@@ -154,17 +154,17 @@
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearch.Location = new System.Drawing.Point(38, 250);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(625, 35);
+            this.textBoxSearch.Size = new System.Drawing.Size(625, 30);
             this.textBoxSearch.TabIndex = 4;
             // 
             // buttonSearch
             // 
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSearch.Location = new System.Drawing.Point(698, 240);
+            this.buttonSearch.Location = new System.Drawing.Point(698, 243);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(315, 45);
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 684);
+            this.ClientSize = new System.Drawing.Size(1052, 704);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
