@@ -69,3 +69,14 @@ create proc p_insertDangKy
 
 	-- Test procedure p_insertDangKy 
 	exec p_insertDangKy @kh_id, @mathexe, @ngaycap, @ngayhethan
+
+
+create trigger tr_capNhatTrangThaiTheKhiDangKy on DangKy
+	after insert as
+	begin
+		declare @mathexe char(10)
+		select @mathexe = MaTheXe from inserted
+		update TheXe
+		set TrangThai=N'Đang sử dụng'
+		where MaTheXe=@mathexe
+	end

@@ -45,6 +45,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.buttonTraThe = new System.Windows.Forms.Button();
+            this.buttonCapNhat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDangKy)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,7 +152,7 @@
             // 
             this.comboBoxMaTheXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMaTheXe.FormattingEnabled = true;
-            this.comboBoxMaTheXe.Location = new System.Drawing.Point(690, 197);
+            this.comboBoxMaTheXe.Location = new System.Drawing.Point(690, 200);
             this.comboBoxMaTheXe.Name = "comboBoxMaTheXe";
             this.comboBoxMaTheXe.Size = new System.Drawing.Size(259, 33);
             this.comboBoxMaTheXe.TabIndex = 4;
@@ -214,6 +216,28 @@
             this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(259, 26);
             this.dateTimePickerNgayKetThuc.TabIndex = 5;
             // 
+            // buttonTraThe
+            // 
+            this.buttonTraThe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTraThe.Location = new System.Drawing.Point(976, 253);
+            this.buttonTraThe.Name = "buttonTraThe";
+            this.buttonTraThe.Size = new System.Drawing.Size(132, 38);
+            this.buttonTraThe.TabIndex = 2;
+            this.buttonTraThe.Text = "Trả thẻ";
+            this.buttonTraThe.UseVisualStyleBackColor = true;
+            this.buttonTraThe.Click += new System.EventHandler(this.buttonTraThe_Click);
+            // 
+            // buttonCapNhat
+            // 
+            this.buttonCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCapNhat.Location = new System.Drawing.Point(976, 197);
+            this.buttonCapNhat.Name = "buttonCapNhat";
+            this.buttonCapNhat.Size = new System.Drawing.Size(132, 38);
+            this.buttonCapNhat.TabIndex = 2;
+            this.buttonCapNhat.Text = "Cập nhật";
+            this.buttonCapNhat.UseVisualStyleBackColor = true;
+            this.buttonCapNhat.Click += new System.EventHandler(this.buttonCapNhat_Click);
+            // 
             // DangKyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -233,6 +257,8 @@
             this.Controls.Add(this.comboBoxMaKH);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.buttonCapNhat);
+            this.Controls.Add(this.buttonTraThe);
             this.Controls.Add(this.buttonDangKy);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.dataGridViewDangKy);
@@ -265,5 +291,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayKetThuc;
+        private System.Windows.Forms.Button buttonTraThe;
+        private System.Windows.Forms.Button buttonCapNhat;
     }
 }
