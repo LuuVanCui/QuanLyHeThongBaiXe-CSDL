@@ -133,10 +133,15 @@ insert into TheXe values('XM0123', 'spktE', N'Đang sử dụng', 'VangLai'),('X
 ('XD01223', 'spktE', N'Bị mất', 'TheTuan'),('OT123', 'spktE', N'Đang sử dụng', 'TheThang'),
 ('XM10123', 'spktB', N'Sẵn sàng sử dụng', 'VangLai'),('OT0125', 'spktB', N'Sẵn sàng sử dụng', 'VangLai')
 
-insert into TheXe values('TTN1', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
-						('TTN2', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
+insert into TheXe values('Thang1', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
+						('Thang2', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
+						('Thang3', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
 						('Week1', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan'),
-						('Week2', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan')
+						('Week2', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan'),
+						('Week3', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan'),
+						('VL1', 'spktB', N'Sẵn sàng sử dụng', 'VangLai'),
+						('VL2', 'spktB', N'Sẵn sàng sử dụng', 'VangLai'),
+						('VL3', 'spktB', N'Sẵn sàng sử dụng', 'VangLai')
 
 -----
 print DATEADD(day, 1, '2020/11/25')

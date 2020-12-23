@@ -42,7 +42,7 @@ create table DangKy(
 	MaTheXe char(10),
 	NgayCap date,
 	NgayHetHan date,
-	primary key(kh_id, MaTheXe, NgayCap, NgayHetHan),
+	primary key(kh_id, MaTheXe),
 	constraint fk_dk_kh_id
 		foreign key(kh_id) references KhachHang(kh_id)
 		on delete cascade 
@@ -93,13 +93,12 @@ alter table Xe
 	foreign key(MaLoaiXe) references LoaiXe(MaLoaiXe)
 go
 
-create table Users(
+create table NhanVien(
 	id char(10),
-	TenDangNhap varchar(20) unique,
-	MatKhau varchar(20),
 	Ten nvarchar(50),
 	SDT bigint,
-	TrangThai bit,
+	ngayvao datetime,
+	ngaynghi datetime,
 	baixe_id char(10),
 	primary key(id),
 	constraint fk_user_baixe_id
@@ -107,5 +106,14 @@ create table Users(
 		references BaiXe(baixe_id)
 		on update cascade
 		on delete cascade
+)
+
+create table HoaDon(
+	maHD char(10) primary key,
+	tenHD nvarchar(50),
+	tongtien real,
+	ngayin datetime,
+	ghichu nvarchar(200),
+	mathexe char(10) references TheXe(MaTheXe)
 )
 

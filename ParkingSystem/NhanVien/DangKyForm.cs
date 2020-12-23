@@ -38,11 +38,14 @@ namespace ParkingSystem.NhanVien
 
             dataGridViewDangKy.DataSource = Globals.getData(new SqlCommand("select * from view_DangKy"));
             Globals.makeUpViews(dataGridViewDangKy);
+
+            dateTimePickerNgayKetThuc.Enabled = false;
+
         }
 
         private void comboBoxLoaiTheXe_DropDownClosed(object sender, EventArgs e)
         {
-            string maLoaiThe = comboBoxLoaiTheXe.SelectedValue.ToString();
+            string maLoaiThe = comboBoxLoaiTheXe.SelectedValue.ToString().Trim();
             string query = "select * from f_layMaTheXeTheoLoaiThe(@maloaithe, @baixeid)";
             SqlCommand command = new SqlCommand(query);
             command.Parameters.Add("@maloaithe", SqlDbType.Char).Value = maLoaiThe;
@@ -51,6 +54,17 @@ namespace ParkingSystem.NhanVien
             comboBoxMaTheXe.DataSource = Globals.getData(command);
             comboBoxMaTheXe.DisplayMember = "MaTheXe";
             comboBoxMaTheXe.ValueMember = "MaTheXe";
+
+            DateTime ngayBatDau = dateTimePickerNgayBatDau.Value;
+
+            if (maLoaiThe == "TheTuan")
+            {
+                dateTimePickerNgayKetThuc.Value = ngayBatDau.AddDays(7);
+            }
+            else if (maLoaiThe == "TheThang")
+            {
+                dateTimePickerNgayKetThuc.Value = ngayBatDau.AddDays(30);
+            }
         }
 
         private void dataGridViewDangKy_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -87,6 +101,16 @@ namespace ParkingSystem.NhanVien
                 MessageBox.Show(ex.Message, "Đăng ký", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             DangKyForm_Load(sender, e);
+        }
+
+        private void buttonTraThe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCapNhat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
