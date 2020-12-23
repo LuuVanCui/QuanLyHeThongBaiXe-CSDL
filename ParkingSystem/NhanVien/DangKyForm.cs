@@ -56,6 +56,7 @@ namespace ParkingSystem.NhanVien
         private void dataGridViewDangKy_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             comboBoxMaKH.SelectedValue = dataGridViewDangKy.CurrentRow.Cells[0].Value;
+            comboBoxMaTheXe.Text = dataGridViewDangKy.CurrentRow.Cells[2].Value.ToString();
             comboBoxLoaiTheXe.Text = dataGridViewDangKy.CurrentRow.Cells[3].Value.ToString();
             dateTimePickerNgayBatDau.Value = Convert.ToDateTime(dataGridViewDangKy.CurrentRow.Cells[4].Value.ToString());
             dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewDangKy.CurrentRow.Cells[5].Value.ToString());

@@ -32,7 +32,7 @@ namespace ParkingSystem.NhanVien
         {
             try
             {
-                kh.insertKhachHang(textBoxCustomerName.Text, textBoxPhone.Text);
+                kh.insertKhachHang(textBoxID.Text, textBoxCustomerName.Text, textBoxPhone.Text);
                 MessageBox.Show("Thêm khách hàng thành công!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 KhachHangForm_Load(sender, e);
             } catch(Exception ex)
@@ -45,6 +45,7 @@ namespace ParkingSystem.NhanVien
         {
             textBoxCustomerName.Text = dataGridViewCustomer.CurrentRow.Cells[1].Value.ToString();
             textBoxPhone.Text = dataGridViewCustomer.CurrentRow.Cells[2].Value.ToString();
+            textBoxID.Text = dataGridViewCustomer.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -69,6 +70,13 @@ namespace ParkingSystem.NhanVien
             SqlCommand command = new SqlCommand(query);
             command.Parameters.Add("@query", SqlDbType.NVarChar).Value = searchQuery;
             dataGridViewCustomer.DataSource = Globals.getData(command);
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            textBoxID.Text = "";
+            textBoxPhone.Text = "";
+            textBoxCustomerName.Text = "";
         }
     }
 }

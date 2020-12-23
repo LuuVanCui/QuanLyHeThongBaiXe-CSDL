@@ -41,6 +41,9 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(381, 30);
+            this.label1.Location = new System.Drawing.Point(335, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(418, 46);
             this.label1.TabIndex = 0;
@@ -73,7 +76,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewCustomer.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(38, 314);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(38, 351);
             this.dataGridViewCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -86,7 +89,7 @@
             this.dataGridViewCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewCustomer.RowHeadersWidth = 62;
             this.dataGridViewCustomer.RowTemplate.Height = 28;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(975, 362);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(975, 325);
             this.dataGridViewCustomer.TabIndex = 1;
             this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
             // 
@@ -94,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(86, 117);
+            this.label2.Location = new System.Drawing.Point(86, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 25);
             this.label2.TabIndex = 3;
@@ -103,7 +106,7 @@
             // textBoxCustomerName
             // 
             this.textBoxCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCustomerName.Location = new System.Drawing.Point(178, 112);
+            this.textBoxCustomerName.Location = new System.Drawing.Point(178, 177);
             this.textBoxCustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCustomerName.Name = "textBoxCustomerName";
             this.textBoxCustomerName.Size = new System.Drawing.Size(485, 30);
@@ -113,7 +116,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(113, 177);
+            this.label3.Location = new System.Drawing.Point(113, 228);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 25);
             this.label3.TabIndex = 3;
@@ -122,7 +125,7 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(178, 177);
+            this.textBoxPhone.Location = new System.Drawing.Point(178, 228);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(485, 30);
@@ -131,7 +134,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAdd.Location = new System.Drawing.Point(698, 106);
+            this.buttonAdd.Location = new System.Drawing.Point(698, 109);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(315, 45);
@@ -143,7 +146,7 @@
             // buttonEdit
             // 
             this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonEdit.Location = new System.Drawing.Point(698, 177);
+            this.buttonEdit.Location = new System.Drawing.Point(698, 191);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(315, 45);
@@ -155,7 +158,7 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(38, 250);
+            this.textBoxSearch.Location = new System.Drawing.Point(38, 286);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(625, 30);
@@ -164,7 +167,7 @@
             // buttonSearch
             // 
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSearch.Location = new System.Drawing.Point(698, 243);
+            this.buttonSearch.Location = new System.Drawing.Point(698, 279);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(315, 45);
@@ -173,6 +176,37 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(102, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "ID KH:";
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxID.Location = new System.Drawing.Point(178, 126);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(197, 30);
+            this.textBoxID.TabIndex = 4;
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonRefresh.Location = new System.Drawing.Point(501, 109);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(173, 45);
+            this.buttonRefresh.TabIndex = 5;
+            this.buttonRefresh.Text = "Làm mới";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // KhachHangForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -180,10 +214,13 @@
             this.ClientSize = new System.Drawing.Size(1052, 704);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxID);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxCustomerName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewCustomer);
@@ -211,5 +248,8 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
