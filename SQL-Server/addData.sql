@@ -191,6 +191,11 @@ insert into TheXe values('XM0123', 'spktE', N'Đang sử dụng', 'VangLai'),('X
 ('XD01223', 'spktE', N'Bị mất', 'TheTuan'),('OT123', 'spktE', N'Đang sử dụng', 'TheThang'),
 ('XM10123', 'spktB', N'Sẵn sàng sử dụng', 'VangLai'),('OT0125', 'spktB', N'Sẵn sàng sử dụng', 'VangLai')
 
+insert into TheXe values('TTN1', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
+						('TTN2', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
+						('Week1', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan'),
+						('Week2', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan')
+
 -----
 print DATEADD(day, 1, '2020/11/25')
 select * from DangKy
@@ -206,8 +211,5 @@ insert into Users values('1','hieu','12345',N'Nguyễn Hiếu', 083927347,1,'spk
 ------
 insert into PhanQuyen values('1','Xem Doanh Thu','admin', 1),('2','Them nhanVien','admin', 1),('3','Them Xe',N'SoatVe', 1),
 ('4','Xem xe trong bai','SoatVe', 1)
-
-----
-insert into Quyen values('1','1'),('1','2'),('2','3'),('2','4'),('3','3'),('3','4')
 
 insert into LoaiXe values('LX1', 'Xe May'), ('LX2', 'Xe Hoi')
