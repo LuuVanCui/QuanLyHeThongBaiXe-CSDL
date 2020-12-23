@@ -27,6 +27,7 @@ update Xe set ThoiGianRa='2020-12-06 12:40:16.363' where MaTheXe='XH0123'
 
 
 -- trigger kiem tra giá tiền nhap vào ở bảng giá phải là số dương
+-- Thay bằng add constrant
 create trigger tr_CheckPrice on BangGia for insert, update
 as
 	begin

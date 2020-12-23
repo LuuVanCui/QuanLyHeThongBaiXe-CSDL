@@ -88,6 +88,11 @@ alter table Xe
 	foreign key(MaTheXe) references TheXe(MaTheXe)
 go
 
+alter table Xe
+	with check add constraint fk_check_maloaixe
+	foreign key(MaLoaiXe) references LoaiXe(MaLoaiXe)
+go
+
 create table Users(
 	id char(10),
 	TenDangNhap varchar(20) unique,
@@ -103,29 +108,4 @@ create table Users(
 		on update cascade
 		on delete cascade
 )
-
-create table PhanQuyen(
-	id_chucnang char(10),
-	TenChucNang nvarchar(50),
-	LoaiNguoiDung nvarchar(50),
-	DuocCapQuyen bit,
-	primary key(id_chucnang)
-)
-
-create table Quyen(
-	userId char(10),
-	id_chucnang char(10),
-	primary key(userId, id_chucnang),
-	constraint fk_quyen_user_id
-		foreign key(userId) 
-		references Users(id)
-		on delete cascade
-		on update cascade,
-	constraint fk_quyen_chucnang_id
-		foreign key(id_chucnang) 
-		references PhanQuyen(id_chucnang)
-		on delete cascade
-		on update cascade
-)
-
 
