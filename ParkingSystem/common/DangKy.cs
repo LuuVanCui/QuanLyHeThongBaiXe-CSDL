@@ -32,5 +32,46 @@ namespace ParkingSystem.common
                 return false;
             }
         }
+
+        public bool updateDangKy(string khId, string maTheXe, DateTime ngayCap, DateTime ngayHetHan)
+        {
+            string query = "exec p_updateDangKy @kh_id, @mathexe, @ngaycap, @ngayhethan";
+            SqlCommand cmd = new SqlCommand(query, mydb.getConnection);
+            cmd.Parameters.Add("@kh_id", SqlDbType.Char).Value = khId;
+            cmd.Parameters.Add("@mathexe", SqlDbType.Char).Value = maTheXe;
+            cmd.Parameters.Add("@ngaycap", SqlDbType.DateTime).Value = ngayCap;
+            cmd.Parameters.Add("@ngayhethan", SqlDbType.DateTime).Value = ngayHetHan;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
+        public bool traTheXe(string maTheXe)
+        {
+            string query = "exec p_traTheXe @mathexe";
+            SqlCommand cmd = new SqlCommand(query, mydb.getConnection);
+            cmd.Parameters.Add("@mathexe", SqlDbType.Char).Value = maTheXe;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
     }
 }

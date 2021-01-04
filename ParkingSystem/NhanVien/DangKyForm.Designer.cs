@@ -186,6 +186,7 @@
             this.dateTimePickerNgayBatDau.Name = "dateTimePickerNgayBatDau";
             this.dateTimePickerNgayBatDau.Size = new System.Drawing.Size(259, 26);
             this.dateTimePickerNgayBatDau.TabIndex = 5;
+            this.dateTimePickerNgayBatDau.ValueChanged += new System.EventHandler(this.dateTimePickerNgayBatDau_ValueChanged);
             // 
             // label6
             // 
