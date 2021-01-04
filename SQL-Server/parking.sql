@@ -1,4 +1,6 @@
-﻿create table KhachHang(
+﻿
+-- Tạo bảng cho cơ sở dữ liệu
+create table KhachHang(
 	kh_id char(10),
 	ten nvarchar(50),
 	sdt char(15) unique,

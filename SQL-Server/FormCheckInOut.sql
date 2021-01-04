@@ -81,3 +81,4 @@ alter trigger tr_capNhatTrangThaiXeRaVao
 
 -- Trigger kiểm tra tính hợp lệ của thẻ xe khi check in
 create trigger 
+
