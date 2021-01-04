@@ -70,6 +70,29 @@ create proc p_insertDangKy
 	-- Test procedure p_insertDangKy 
 	exec p_insertDangKy @kh_id, @mathexe, @ngaycap, @ngayhethan
 
+-- Cập nhật bảng đăng ký
+create proc p_updateDangKy 
+	@kh_id char(10),
+	@mathexe char(10),
+	@ngaycap datetime,
+	@ngayhethan datetime
+	as begin
+		update DangKy
+		set NgayCap = @ngaycap, NgayHetHan = @ngayhethan
+		where kh_id = @kh_id and MaTheXe = @mathexe
+	end
+	exec p_updateDangKy @kh_id, @mathexe, @ngaycap, @ngayhethan
+
+select * from DangKy
+
+-- Cập nhật trạng thái của thẻ xe khi trả thẻ
+create proc p_traTheXe
+	@mathexe char(10)
+	as begin
+		update TheXe
+		set TrangThai=N'Sẵn sàng sử dụng'
+		where MaTheXe=@mathexe
+	end
 
 create trigger tr_capNhatTrangThaiTheKhiDangKy on DangKy
 	after insert as

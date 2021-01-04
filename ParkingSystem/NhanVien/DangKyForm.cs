@@ -40,7 +40,6 @@ namespace ParkingSystem.NhanVien
             Globals.makeUpViews(dataGridViewDangKy);
 
             dateTimePickerNgayKetThuc.Enabled = false;
-
         }
 
         private void comboBoxLoaiTheXe_DropDownClosed(object sender, EventArgs e)
@@ -69,11 +68,14 @@ namespace ParkingSystem.NhanVien
 
         private void dataGridViewDangKy_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            comboBoxMaKH.SelectedValue = dataGridViewDangKy.CurrentRow.Cells[0].Value;
-            comboBoxMaTheXe.Text = dataGridViewDangKy.CurrentRow.Cells[2].Value.ToString();
-            comboBoxLoaiTheXe.Text = dataGridViewDangKy.CurrentRow.Cells[3].Value.ToString();
-            dateTimePickerNgayBatDau.Value = Convert.ToDateTime(dataGridViewDangKy.CurrentRow.Cells[4].Value.ToString());
-            dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewDangKy.CurrentRow.Cells[5].Value.ToString());
+            if (dataGridViewDangKy.CurrentRow != null)
+            {
+                comboBoxMaKH.SelectedValue = dataGridViewDangKy.CurrentRow.Cells[0].Value;
+                comboBoxMaTheXe.Text = dataGridViewDangKy.CurrentRow.Cells[2].Value.ToString();
+                comboBoxLoaiTheXe.Text = dataGridViewDangKy.CurrentRow.Cells[3].Value.ToString();
+                dateTimePickerNgayBatDau.Value = Convert.ToDateTime(dataGridViewDangKy.CurrentRow.Cells[4].Value.ToString());
+                dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewDangKy.CurrentRow.Cells[5].Value.ToString());
+            }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -105,12 +107,48 @@ namespace ParkingSystem.NhanVien
 
         private void buttonTraThe_Click(object sender, EventArgs e)
         {
-
+            string maTheXe = dataGridViewDangKy.CurrentRow.Cells[2].Value.ToString();
+            try 
+            {
+                dangKy.traTheXe(maTheXe);
+                MessageBox.Show("Trả thẻ thành công!", "Trả thẻ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Trả thẻ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonCapNhat_Click(object sender, EventArgs e)
         {
+            string kh_id = comboBoxMaKH.Text;
+            string maTheXe = comboBoxMaTheXe.Text;
+            DateTime ngayCap = dateTimePickerNgayBatDau.Value;
+            DateTime ngayHetHan = dateTimePickerNgayKetThuc.Value;
+            try
+            {
+                dangKy.updateDangKy(kh_id, maTheXe, ngayCap, ngayHetHan);
+                MessageBox.Show("Cập nhật thành công!", "Cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            DangKyForm_Load(sender, e);
+        }
 
+        private void dateTimePickerNgayBatDau_ValueChanged(object sender, EventArgs e)
+        {
+            string maLoaiThe = comboBoxLoaiTheXe.SelectedValue.ToString().Trim();
+            DateTime ngayBatDau = dateTimePickerNgayBatDau.Value;
+
+            if (maLoaiThe == "TheTuan")
+            {
+                dateTimePickerNgayKetThuc.Value = ngayBatDau.AddDays(7);
+            }
+            else if (maLoaiThe == "TheThang")
+            {
+                dateTimePickerNgayKetThuc.Value = ngayBatDau.AddDays(30);
+            }
         }
     }
 }
