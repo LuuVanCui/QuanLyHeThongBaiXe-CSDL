@@ -40,7 +40,6 @@ E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\bin\D
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\bin\Debug\ParkingSystem.exe
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\bin\Debug\ParkingSystem.pdb
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\bin\Debug\aa-ER\ParkingSystem.resources.dll
-E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.csprojAssemblyReference.cache
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.AdminDashboard.resources
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQLGiaTien.resources
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQLLoaiXe.resources
@@ -86,3 +85,5 @@ D:\nam 3\HK1\DBMS\project new 3\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\
 D:\nam 3\HK1\DBMS\project new 3\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.exe
 D:\nam 3\HK1\DBMS\project new 3\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.pdb
 E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.Admin.frmQLXe.resources
+E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.NhanVien.HoaDonForm.resources
+E:\HCMUTE\Năm 3 - HK1\Database\DoAn\QuanLyHeThongBaiXe-CSDL\ParkingSystem\obj\Debug\ParkingSystem.csprojAssemblyReference.cache

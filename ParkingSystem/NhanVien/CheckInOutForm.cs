@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ParkingSystem.common;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ParkingSystem.common;
 
 namespace ParkingSystem.NhanVien
 {
@@ -21,11 +16,12 @@ namespace ParkingSystem.NhanVien
         }
 
         Xe xe = new Xe();
+        SqlCommand cmdMaTheCheckIn = new SqlCommand();
 
         private void CheckInOutForm_Load(object sender, EventArgs e)
         {
-            SqlCommand cmdMaTheCheckIn = new SqlCommand("select * from f_maTheXeCheckIn(@baixeId)");
             cmdMaTheCheckIn.Parameters.Add("@baixeId", SqlDbType.Char).Value = Globals.baixeId;
+            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachVangLai(@baixeId)";
             comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
             comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
             comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
@@ -64,7 +60,7 @@ namespace ParkingSystem.NhanVien
         private void buttonCheckIn_Click(object sender, EventArgs e)
         {
             // get input data
-            if (comboBoxLoaiXe.SelectedValue != null)
+            if (comboBoxLoaiXe.SelectedValue != null && pictureBoxAnhTruoc.Image != null && pictureBoxAnhSau.Image != null)
             {
                 string maTheXe = comboBoxMaTheXeCheckIn.Text;
                 string maLoaiXe = comboBoxLoaiXe.SelectedValue.ToString();
@@ -83,7 +79,8 @@ namespace ParkingSystem.NhanVien
                 {
                     MessageBox.Show(ex.Message, "Check In", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                CheckInOutForm_Load(sender, e);
+                radioButtonKhachDangKy_CheckedChanged(sender, e);
+                radioButtonKhachVangLai_CheckedChanged(sender, e);
             }
         }
 
@@ -99,8 +96,10 @@ namespace ParkingSystem.NhanVien
                     DateTime thoiGianRa = DateTime.Now;
                     try
                     {
-                        xe.updateXe(maTheXe, bienSo, thoiGianRa);
-                        MessageBox.Show("Check Out thành công!", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //xe.updateXe(maTheXe, bienSo, thoiGianRa);
+                        //MessageBox.Show("Check Out thành công!", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HoaDonForm hoaDon = new HoaDonForm(bienSo);
+                        hoaDon.ShowDialog(this);
                     }
                     catch (Exception ex)
                     {
@@ -150,6 +149,22 @@ namespace ParkingSystem.NhanVien
 
                 break;
             }
+        }
+
+        private void radioButtonKhachVangLai_CheckedChanged(object sender, EventArgs e)
+        {
+            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachVangLai(@baixeId)";
+            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
+            comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
+            comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
+        }
+
+        private void radioButtonKhachDangKy_CheckedChanged(object sender, EventArgs e)
+        {
+            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachDangKy(@baixeId)";
+            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
+            comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
+            comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
         }
     }
 }

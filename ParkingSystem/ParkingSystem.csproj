@@ -135,6 +135,12 @@
     <Compile Include="common\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVien\HoaDonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\HoaDonForm.Designer.cs">
+      <DependentUpon>HoaDonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien\KhachHangForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="common\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\HoaDonForm.resx">
+      <DependentUpon>HoaDonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\KhachHangForm.resx">
       <DependentUpon>KhachHangForm.cs</DependentUpon>

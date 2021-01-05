@@ -126,7 +126,7 @@
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>621, 165</value>
+    <value>621, 211</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 25</value>
@@ -147,7 +147,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -156,7 +156,7 @@
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>648, 256</value>
+    <value>648, 273</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 25</value>
@@ -177,7 +177,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -207,7 +207,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -237,13 +237,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="comboBoxMaTheXeCheckIn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="comboBoxMaTheXeCheckIn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>769, 165</value>
+    <value>769, 211</value>
   </data>
   <data name="comboBoxMaTheXeCheckIn.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 33</value>
@@ -261,7 +261,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;comboBoxMaTheXeCheckIn.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="comboBoxLoaiXe.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
@@ -285,13 +285,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;comboBoxLoaiXe.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="textBoxBienSo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="textBoxBienSo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>769, 251</value>
+    <value>769, 268</value>
   </data>
   <data name="textBoxBienSo.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 30</value>
@@ -309,7 +309,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;textBoxBienSo.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -339,7 +339,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -369,7 +369,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="pictureBoxAnhTruoc.Location" type="System.Drawing.Point, System.Drawing">
     <value>188, 334</value>
@@ -394,7 +394,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;pictureBoxAnhTruoc.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="pictureBoxAnhSau.Location" type="System.Drawing.Point, System.Drawing">
     <value>769, 334</value>
@@ -418,7 +418,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;pictureBoxAnhSau.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>642, 163</value>
@@ -445,7 +445,7 @@
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="comboBoxMaTheXeCheckOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 165</value>
+    <value>188, 151</value>
   </data>
   <data name="comboBoxMaTheXeCheckOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 33</value>
@@ -463,7 +463,70 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;comboBoxMaTheXeCheckOut.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
+  </data>
+  <data name="radioButtonKhachVangLai.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonKhachVangLai.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="radioButtonKhachVangLai.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonKhachVangLai.Location" type="System.Drawing.Point, System.Drawing">
+    <value>653, 151</value>
+  </data>
+  <data name="radioButtonKhachVangLai.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 29</value>
+  </data>
+  <data name="radioButtonKhachVangLai.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="radioButtonKhachVangLai.Text" xml:space="preserve">
+    <value>Khách vãng lai</value>
+  </data>
+  <data name="&gt;&gt;radioButtonKhachVangLai.Name" xml:space="preserve">
+    <value>radioButtonKhachVangLai</value>
+  </data>
+  <data name="&gt;&gt;radioButtonKhachVangLai.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonKhachVangLai.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;radioButtonKhachVangLai.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButtonKhachDangKy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonKhachDangKy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="radioButtonKhachDangKy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>846, 149</value>
+  </data>
+  <data name="radioButtonKhachDangKy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 29</value>
+  </data>
+  <data name="radioButtonKhachDangKy.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="radioButtonKhachDangKy.Text" xml:space="preserve">
+    <value>Khách đăng ký</value>
+  </data>
+  <data name="&gt;&gt;radioButtonKhachDangKy.Name" xml:space="preserve">
+    <value>radioButtonKhachDangKy</value>
+  </data>
+  <data name="&gt;&gt;radioButtonKhachDangKy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonKhachDangKy.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;radioButtonKhachDangKy.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="buttonCheckIn.Location" type="System.Drawing.Point, System.Drawing">
     <value>760, 538</value>
@@ -487,7 +550,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;buttonCheckIn.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="buttonCheckOut.Location" type="System.Drawing.Point, System.Drawing">
     <value>188, 538</value>
@@ -511,7 +574,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;buttonCheckOut.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="buttonLoadAnhSau.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -538,7 +601,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;buttonLoadAnhSau.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="buttonLoadAnhTruoc.Location" type="System.Drawing.Point, System.Drawing">
     <value>188, 453</value>
@@ -562,7 +625,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;buttonLoadAnhTruoc.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -574,7 +637,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>764, 102</value>
+    <value>799, 93</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 30</value>
@@ -595,7 +658,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -604,7 +667,7 @@
     <value>Microsoft Sans Serif, 13pt, style=Bold, Underline</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 102</value>
+    <value>183, 93</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 30</value>
@@ -625,7 +688,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -637,7 +700,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 165</value>
+    <value>61, 151</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -658,7 +721,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -694,7 +757,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Working</value>
+    <value>Quản lý xe ra vào</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CheckInOutForm</value>
