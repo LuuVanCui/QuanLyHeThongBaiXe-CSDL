@@ -20,11 +20,13 @@ namespace ParkingSystem.Admin
             Globals.makeUpViews(dataGridView1);
         }
         BaiXe bx = new BaiXe();
+        
         private void frmBaiXe_Load(object sender, EventArgs e)
         {
 
             string query = "select * from view_BaiXe";
             dataGridView1.DataSource = Globals.getData(new SqlCommand(query));
+            
         }
 
 

@@ -20,7 +20,8 @@ namespace ParkingSystem.Admin
             Globals.makeUpViews(dataGridView1);
             //fillDataComboBox();
             dataGridView1.RowHeadersVisible = false;
-            
+            comboBoxLoaiXe.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxBaiXe.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         Xe xe = new Xe();
 
@@ -38,6 +39,8 @@ namespace ParkingSystem.Admin
             string query = "select * from view_AdminXe";
 
             dataGridView1.DataSource = Globals.getData(new SqlCommand(query));
+            comboBoxBaiXe.SelectedValue = "Tất Cả";
+            comboBoxLoaiXe.SelectedValue = "Tất Cả";
            
         }
 
@@ -117,25 +120,23 @@ namespace ParkingSystem.Admin
         private void buttonXoa_Click_1(object sender, EventArgs e)
         {
 
-            if ((MessageBox.Show("Bạn có thực sự muốn xóa xe vừa chọn?", "Xóa Xe", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+            if ((MessageBox.Show("Xác nhận xóa xe ?", "Xóa Xe", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
+                DateTime dt1 = dateTimePicker1.Value;
+                DateTime dt2 = dateTimePicker2.Value;
+                String bx = comboBoxBaiXe.SelectedValue.ToString();
+                String lx = comboBoxLoaiXe.SelectedValue.ToString();
 
-
-                if (dataGridView1.SelectedCells.Count.ToString() == "0" && dataGridView1.SelectedRows.Count.ToString() == "0")
+                if (dt1>dt2)
                 {
-                    MessageBox.Show("Bạn phải chọn xe cần xóa trước", "Xóa xe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Thời gian không hợp lệ", "Xóa xe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
-                {
-                    String bs = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    DateTime time = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value.ToString());
-                    MessageBox.Show(time.ToString());
-
-                    if (xe.deleteXe(bs, time))
+                {       
+                    if (xe.deleteXe(bx,lx,dt1,dt2))
                     {
                         MessageBox.Show("Xóa thành công!", "TXóa Xe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         frmQLXe_Load(sender, e);
-
                     }
                     else
                     {

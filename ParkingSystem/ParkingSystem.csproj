@@ -58,6 +58,12 @@
     <Compile Include="Admin\frmBaiXe.Designer.cs">
       <DependentUpon>frmBaiXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\frmDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmDoanhThu.Designer.cs">
+      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\frmPhanQuyen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,8 +115,10 @@
     <Compile Include="common\ALoaiXe.cs" />
     <Compile Include="common\DangKy.cs" />
     <Compile Include="common\BaiXe.cs" />
+    <Compile Include="common\GiaTien.cs" />
     <Compile Include="common\LoaiXe.cs" />
     <Compile Include="common\KhachHang.cs" />
+    <Compile Include="common\Users.cs" />
     <Compile Include="common\Xe.cs" />
     <Compile Include="My_DB.cs" />
     <Compile Include="NhanVien\BangGiaForm.cs">
@@ -169,11 +177,17 @@
     <EmbeddedResource Include="Admin\frmBaiXe.resx">
       <DependentUpon>frmBaiXe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmDoanhThu.resx">
+      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLGiaTien.resx">
       <DependentUpon>frmQLGiaTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLLoaiXe.resx">
       <DependentUpon>frmQLLoaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmQLNhanVien.resx">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLTheXe.resx">
       <DependentUpon>frmQLTheXe.cs</DependentUpon>

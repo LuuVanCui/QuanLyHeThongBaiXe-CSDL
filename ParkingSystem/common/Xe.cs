@@ -79,14 +79,16 @@ namespace ParkingSystem.common
             command.Parameters.Add("@baixe_id", SqlDbType.Char).Value = baixeId;
         }
         
-        public bool deleteXe(String bienSo, DateTime tgVao)
+        public bool deleteXe(String baixe, String lx, DateTime time1, DateTime time2)
         {
-            SqlCommand command = new SqlCommand("exec p_deleteXe @bs, @time", mydb.getConnection);
-            command.Parameters.Add("@bs", SqlDbType.Char).Value = bienSo;
-            command.Parameters.Add("@time", SqlDbType.DateTime).Value = tgVao;
+            SqlCommand command = new SqlCommand("exec deleteXeByDay @bx, @lx, @t1, @t2", mydb.getConnection);
+            command.Parameters.Add("@bx", SqlDbType.Char).Value = baixe;
+            command.Parameters.Add("@lx", SqlDbType.Char).Value = lx;
+            command.Parameters.Add("@t1", SqlDbType.DateTime).Value = time1;
+            command.Parameters.Add("@t2", SqlDbType.DateTime).Value = time2;
 
             mydb.openConnection();
-            if (command.ExecuteNonQuery() == 1)
+            if (command.ExecuteNonQuery() >= 1)
             {
                 mydb.closeConnection();
                 return true;

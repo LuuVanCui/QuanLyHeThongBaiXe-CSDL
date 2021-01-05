@@ -32,7 +32,8 @@ namespace ParkingSystem
 
         private void buttonQLDoanhThu_Click(object sender, EventArgs e)
         {
-           
+            frmDoanhThu dt = new frmDoanhThu();
+            dt.ShowDialog();
         }
 
         private void buttonQLGiaTien_Click(object sender, EventArgs e)
@@ -43,7 +44,8 @@ namespace ParkingSystem
 
         private void buttonQLTheXe_Click(object sender, EventArgs e)
         {
-
+            frmQLTheXe tx = new frmQLTheXe();
+            tx.ShowDialog();
         }
 
         private void buttonQLKhachHang_Click(object sender, EventArgs e)
