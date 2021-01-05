@@ -50,6 +50,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.radioButtonKhachDangKy = new System.Windows.Forms.RadioButton();
+            this.radioButtonKhachVangLai = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnhTruoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnhSau)).BeginInit();
             this.panel1.SuspendLayout();
@@ -130,6 +132,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.radioButtonKhachVangLai);
+            this.panel1.Controls.Add(this.radioButtonKhachDangKy);
             this.panel1.Controls.Add(this.buttonCheckIn);
             this.panel1.Controls.Add(this.buttonCheckOut);
             this.panel1.Controls.Add(this.buttonLoadAnhSau);
@@ -195,6 +199,23 @@
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
             // 
+            // radioButtonKhachDangKy
+            // 
+            resources.ApplyResources(this.radioButtonKhachDangKy, "radioButtonKhachDangKy");
+            this.radioButtonKhachDangKy.Name = "radioButtonKhachDangKy";
+            this.radioButtonKhachDangKy.TabStop = true;
+            this.radioButtonKhachDangKy.UseVisualStyleBackColor = true;
+            this.radioButtonKhachDangKy.CheckedChanged += new System.EventHandler(this.radioButtonKhachDangKy_CheckedChanged);
+            // 
+            // radioButtonKhachVangLai
+            // 
+            resources.ApplyResources(this.radioButtonKhachVangLai, "radioButtonKhachVangLai");
+            this.radioButtonKhachVangLai.Checked = true;
+            this.radioButtonKhachVangLai.Name = "radioButtonKhachVangLai";
+            this.radioButtonKhachVangLai.TabStop = true;
+            this.radioButtonKhachVangLai.UseVisualStyleBackColor = true;
+            this.radioButtonKhachVangLai.CheckedChanged += new System.EventHandler(this.radioButtonKhachVangLai_CheckedChanged);
+            // 
             // CheckInOutForm
             // 
             resources.ApplyResources(this, "$this");
@@ -234,5 +255,7 @@
         private System.Windows.Forms.ComboBox comboBoxLoaiXe;
         private System.Windows.Forms.TextBox textBoxBienSo;
         private System.Windows.Forms.ComboBox comboBoxMaTheXeCheckOut;
+        private System.Windows.Forms.RadioButton radioButtonKhachVangLai;
+        private System.Windows.Forms.RadioButton radioButtonKhachDangKy;
     }
 }

@@ -286,12 +286,20 @@ create function f_timKiemTrongViewDangKy(@query nvarchar(50))
 		LIKE '%' + @query + '%'
 GO
 
--- 6. Lấy tất cả các mã thẻ xe với trạng thái sẵn sàng sử dụng của 1 bãi xe nào đó
-create function f_maTheXeCheckIn(@baixeId char(10)) 
+-- 6. Lấy tất cả các mã thẻ xe dành cho khách vãng lai với trạng thái sẵn sàng sử dụng của 1 bãi xe nào đó
+create function f_maTheXeCheckInKhachVangLai(@baixeId char(10)) 
 	returns table
 	as return
 		select * from TheXe
-		where TrangThai=N'Sẵn sàng sử dụng'	and baixe_id = @baixeId
+		where TrangThai=N'Sẵn sàng sử dụng'	and baixe_id = @baixeId and MaLoaiThe='VangLai'
+GO
+
+-- Lấy tất cả các mã thẻ xe dành cho khách đăng ký với trạng thái sẵn sàng sử dụng của 1 bãi xe nào đó
+create function f_maTheXeCheckInKhachDangKy(@baixeId char(10)) 
+	returns table
+	as return
+		select tx.MaTheXe from TheXe tx, DangKy dk
+		where tx.MaTheXe=dk.MaTheXe and tx.baixe_id = @baixeId and tx.TrangThai=N'Đang sử dụng'
 GO
 
 -- 7. Lấy tất cả các mã thẻ xe với trạng thái đang sử dụng của 1 bãi xe nào đó

@@ -16,11 +16,12 @@ namespace ParkingSystem.NhanVien
         }
 
         Xe xe = new Xe();
+        SqlCommand cmdMaTheCheckIn = new SqlCommand();
 
         private void CheckInOutForm_Load(object sender, EventArgs e)
         {
-            SqlCommand cmdMaTheCheckIn = new SqlCommand("select * from f_maTheXeCheckIn(@baixeId)");
             cmdMaTheCheckIn.Parameters.Add("@baixeId", SqlDbType.Char).Value = Globals.baixeId;
+            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachVangLai(@baixeId)";
             comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
             comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
             comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
@@ -78,7 +79,8 @@ namespace ParkingSystem.NhanVien
                 {
                     MessageBox.Show(ex.Message, "Check In", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                CheckInOutForm_Load(sender, e);
+                radioButtonKhachDangKy_CheckedChanged(sender, e);
+                radioButtonKhachVangLai_CheckedChanged(sender, e);
             }
         }
 
@@ -147,6 +149,22 @@ namespace ParkingSystem.NhanVien
 
                 break;
             }
+        }
+
+        private void radioButtonKhachVangLai_CheckedChanged(object sender, EventArgs e)
+        {
+            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachVangLai(@baixeId)";
+            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
+            comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
+            comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
+        }
+
+        private void radioButtonKhachDangKy_CheckedChanged(object sender, EventArgs e)
+        {
+            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachDangKy(@baixeId)";
+            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
+            comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
+            comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
         }
     }
 }
