@@ -14,12 +14,27 @@ create table KhachHang(
 )
 GO
 
+insert into KhachHang (kh_id, ten, sdt) values ('KH00001', N'Lưu Văn Cụi', '7926172287');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00002', N'Nguyễn Ngọc Trung Hiếu', '1183284099');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00003', N'Nguyễn Văn A', '4548553792');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00004', N'Trần Thị Bích', '3478308067');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00005', N'Dương Trung Bảo', '4935423982');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00006', N'Võ Trần Minh Quân', '4218391566');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00007', N'Nguyễn Huỳnh Minh Tiến', '3062655849');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00008', N'Trần Quang Đại', '4847215936');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00009', N'Dương Cẩm Tú', '5546206179');
+insert into KhachHang (kh_id, ten, sdt) values ('KH00010', N'Đặng Minh Toàn', '9682733956');
+
 create table LoaiTheXe(
 	MaLoaiThe char(10),
 	TenLoaiThe nvarchar(50),
 	primary key(MaLoaiThe)
 )
 GO
+
+insert into LoaiTheXe (MaLoaiThe, TenLoaiThe) values ('TheTuan', N'Thẻ Tuần');
+insert into LoaiTheXe (MaLoaiThe, TenLoaiThe) values ('TheThang', N'Thẻ Tháng');
+insert into LoaiTheXe (MaLoaiThe, TenLoaiThe) values ('VangLai', N'Vãng Lai');
 
 create table BaiXe(
 	baixe_id char(10),
@@ -29,6 +44,10 @@ create table BaiXe(
 	primary key(baixe_id)
 )
 GO
+
+insert into BaiXe values('spktA', N'SPKT A', N'Khu A, DH SPKT, Thủ Đức, HCM', 500);
+insert into BaiXe values('spktB', N'SPKT B', N'Khu B, DH SPKT, Thủ Đức, HCM', 400);
+insert into BaiXe values('spktC', N'SPKT C', N'Khu C, DH SPKT, Thủ Đức, HCM', 600);
 
 create table TheXe(
 	MaTheXe char(10),
@@ -48,6 +67,54 @@ create table TheXe(
 		on update cascade
 )
 GO
+
+insert into TheXe values('AM0001', 'spktA', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('AM0002', 'spktA', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('AM0003', 'spktA', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('AM0004', 'spktA', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('AM0005', 'spktA', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('AW0001', 'spktA', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('AW0002', 'spktA', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('AW0003', 'spktA', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('AW0004', 'spktA', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('AW0005', 'spktA', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('AVL0001', 'spktA', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('AVL0002', 'spktA', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('AVL0003', 'spktA', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('AVL0004', 'spktA', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('AVL0005', 'spktA', N'Sẵn sàng sử dụng', 'VangLai');
+
+insert into TheXe values('BM0001', 'spktB', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('BM0002', 'spktB', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('BM0003', 'spktB', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('BM0004', 'spktB', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('BM0005', 'spktB', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('BW0001', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('BW0002', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('BW0003', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('BW0004', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('BW0005', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('BVL0001', 'spktB', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('BVL0002', 'spktB', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('BVL0003', 'spktB', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('BVL0004', 'spktB', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('BVL0005', 'spktB', N'Sẵn sàng sử dụng', 'VangLai');
+
+insert into TheXe values('CM0001', 'spktC', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('CM0002', 'spktC', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('CM0003', 'spktC', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('CM0004', 'spktC', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('CM0005', 'spktC', N'Sẵn sàng sử dụng', 'TheThang');
+insert into TheXe values('CW0001', 'spktC', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('CW0002', 'spktC', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('CW0003', 'spktC', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('CW0004', 'spktC', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('CW0005', 'spktC', N'Sẵn sàng sử dụng', 'TheTuan');
+insert into TheXe values('CVL0001', 'spktC', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('CVL0002', 'spktC', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('CVL0003', 'spktC', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('CVL0004', 'spktC', N'Sẵn sàng sử dụng', 'VangLai');
+insert into TheXe values('CVL0005', 'spktC', N'Sẵn sàng sử dụng', 'VangLai');
 
 create table DangKy(
 	kh_id char(10),
@@ -73,6 +140,10 @@ create table LoaiXe(
 )
 GO
 
+insert into LoaiXe values('XM', N'Xe máy');
+insert into LoaiXe values('XD', N'Xe đạp');
+insert into LoaiXe values('XH', N'Xe hơi');
+
 create table BangGia(
 	MaLoaiGia char(10) primary key,
 	TenLoaiGia nvarchar(50), -- VD: Giá gửi theo ngày, tuần, tháng - giá phạt theo ngày
@@ -81,6 +152,13 @@ create table BangGia(
 	MaLoaiXe char(10) references LoaiXe(MaLoaiXe)
 )
 GO
+
+insert into BangGia values('GiuXD', N'Giá giữ xe đạp', 3000, '2021-01-05 11:01:26.423', 'XD');
+insert into BangGia values('GiuXM', N'Giá giữ xe máy', 5000, '2021-01-05 11:01:26.423', 'XM');
+insert into BangGia values('GiuXH', N'Giá giữ xe hơi', 20000, '2021-01-05 11:01:26.423', 'XH');
+insert into BangGia values('PhatXD', N'Giá phạt xe đạp', 20000, '2021-01-05 11:01:26.423', 'XD');
+insert into BangGia values('PhatXM', N'Giá phạt xe máy', 50000, '2021-01-05 11:01:26.423', 'XM');
+insert into BangGia values('PhatXH', N'Giá phạt xe hơi', 200000, '2021-01-05 11:01:26.423', 'XH');
 
 create table Xe(
 	BienSo varchar(10),
@@ -128,7 +206,7 @@ GO
 
 create table HoaDon(
 	maHD char(10) primary key,
-	tenHD nvarchar(50),
+	tregio int,
 	tongtien real,
 	ngayin datetime,
 	ghichu nvarchar(200),
@@ -137,17 +215,6 @@ create table HoaDon(
 GO
 
 --==================1. CÁC VIEW CHO NHÂN VIÊN==================
-
--- 1. View nhân viên xem thẻ xe
-create view view_NVXemTheXe
-as
-	select MaTheXe as N'Mã thẻ',b.Ten as N'Tên bãi xe', TrangThai as N'Trạng thái', TenLoaiThe as N'Loại thẻ' 
-	from TheXe
-	inner join BaiXe as b
-	on TheXe.baixe_id=b.baixe_id
-	inner join LoaiTheXe
-	on TheXe.MaLoaiThe= LoaiTheXe.MaLoaiThe
-GO
 
 -- 2. View khách hàng
 create view view_KhachHang as
@@ -183,10 +250,10 @@ GO
 --==================2. CÁC FUNCTION CHO NHÂN VIÊN==================
 
 -- 1. Tìm kiếm tất cả thông tin có trong view NV xem thẻ xe
-create function f_timKiemTheXe(@query nvarchar(50))
+create function f_timKiemTheXe(@query nvarchar(50), @baixeId char(10))
 	returns table 
 	as return
-		SELECT * FROM view_NVXemTheXe 
+		SELECT * FROM f_NVXemTheXe(@baixeId)
 		WHERE CONCAT([Mã thẻ], [Tên bãi xe], [Trạng thái], [Loại thẻ]) 
 		LIKE '%' + @query + '%'
 GO
@@ -260,6 +327,19 @@ create function f_layTenLoaiXe(@maloaixe char(10))
 		select @tenloaixe=TenLoaiXe from LoaiXe where MaLoaiXe='LX1'
 		return @tenloaixe
 	end
+GO
+
+-- 10. Nhân viên xem bãi xe
+create function f_NVXemTheXe(@baixeId char(10))
+	returns table
+	as return
+		select MaTheXe as N'Mã thẻ',b.Ten as N'Tên bãi xe', TrangThai as N'Trạng thái', TenLoaiThe as N'Loại thẻ' 
+		from TheXe
+		inner join BaiXe as b
+		on TheXe.baixe_id=b.baixe_id
+		inner join LoaiTheXe
+		on TheXe.MaLoaiThe= LoaiTheXe.MaLoaiThe
+		where b.baixe_id = @baixeId
 GO
 
 --==================3. CÁC STORE PROCEDURE CHO NHÂN VIÊN==================

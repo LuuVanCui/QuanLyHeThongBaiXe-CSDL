@@ -218,14 +218,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxMaTheXeCheckIn;
-        private System.Windows.Forms.ComboBox comboBoxLoaiXe;
-        private System.Windows.Forms.TextBox textBoxBienSo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBoxAnhTruoc;
         private System.Windows.Forms.PictureBox pictureBoxAnhSau;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxMaTheXeCheckOut;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -234,5 +231,8 @@
         private System.Windows.Forms.Button buttonCheckOut;
         private System.Windows.Forms.Button buttonLoadAnhSau;
         private System.Windows.Forms.Button buttonLoadAnhTruoc;
+        private System.Windows.Forms.ComboBox comboBoxLoaiXe;
+        private System.Windows.Forms.TextBox textBoxBienSo;
+        private System.Windows.Forms.ComboBox comboBoxMaTheXeCheckOut;
     }
 }

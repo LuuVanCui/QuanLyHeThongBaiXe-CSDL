@@ -21,16 +21,18 @@ namespace ParkingSystem
         private void TheXeForm_Load(object sender, EventArgs e)
         {
             Globals.makeUpViews(dataGridViewTheXe);
-            string query = "select * from view_NVXemTheXe";
-            dataGridViewTheXe.DataSource = Globals.getData(new SqlCommand(query));
+            SqlCommand cmd = new SqlCommand("select * from f_NVXemTheXe(@baixeId)");
+            cmd.Parameters.Add("@baixeId", SqlDbType.Char).Value = Globals.baixeId;
+            dataGridViewTheXe.DataSource = Globals.getData(cmd);
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             string searchQuery = textBoxSearch.Text;
-            string query = "select * from f_timKiemTheXe(@query)";
+            string query = "select * from f_timKiemTheXe(@query, @baixeId)";
             SqlCommand command = new SqlCommand(query);
             command.Parameters.Add("@query", SqlDbType.NVarChar).Value = searchQuery;
+            command.Parameters.Add("@baixeId", SqlDbType.Char).Value = Globals.baixeId;
             dataGridViewTheXe.DataSource = Globals.getData(command);
         }
     }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ParkingSystem.common;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ParkingSystem.common;
 
 namespace ParkingSystem.NhanVien
 {
@@ -64,7 +59,7 @@ namespace ParkingSystem.NhanVien
         private void buttonCheckIn_Click(object sender, EventArgs e)
         {
             // get input data
-            if (comboBoxLoaiXe.SelectedValue != null)
+            if (comboBoxLoaiXe.SelectedValue != null && pictureBoxAnhTruoc.Image != null && pictureBoxAnhSau.Image != null)
             {
                 string maTheXe = comboBoxMaTheXeCheckIn.Text;
                 string maLoaiXe = comboBoxLoaiXe.SelectedValue.ToString();
@@ -99,8 +94,10 @@ namespace ParkingSystem.NhanVien
                     DateTime thoiGianRa = DateTime.Now;
                     try
                     {
-                        xe.updateXe(maTheXe, bienSo, thoiGianRa);
-                        MessageBox.Show("Check Out thành công!", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //xe.updateXe(maTheXe, bienSo, thoiGianRa);
+                        //MessageBox.Show("Check Out thành công!", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HoaDonForm hoaDon = new HoaDonForm(bienSo);
+                        hoaDon.ShowDialog(this);
                     }
                     catch (Exception ex)
                     {
