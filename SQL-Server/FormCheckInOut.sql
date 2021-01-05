@@ -6,7 +6,7 @@ delete from Xe where BienSo='1234'
 
 update TheXe set TrangThai=N'Sẵn sàng sử dụng'
 
--- Hàm lấy xe ra, truyền vào mã thẻ xe, kết quả là xe trong bãi cần lấy ra
+-- Hàm lấy xe ra, truyền vào mã thẻ xe, kết quả là thông tin của xe trong bãi cần lấy ra
 create function f_layXeRa(@mathexe char(10)) 
 	returns table
 	as return 
