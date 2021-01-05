@@ -1,8 +1,8 @@
 
-create database PARKING
+create database PARKINGDEMO
 GO
 
-USE PARKING
+USE PARKINGDEMO
 GO
 
 --==================TẠO BẢNG VÀ CÁC RÀNG BUỘC==================
@@ -249,15 +249,6 @@ GO
 
 --==================2. CÁC FUNCTION CHO NHÂN VIÊN==================
 
--- 1. Tìm kiếm tất cả thông tin có trong view NV xem thẻ xe
-create function f_timKiemTheXe(@query nvarchar(50), @baixeId char(10))
-	returns table 
-	as return
-		SELECT * FROM f_NVXemTheXe(@baixeId)
-		WHERE CONCAT([Mã thẻ], [Tên bãi xe], [Trạng thái], [Loại thẻ]) 
-		LIKE '%' + @query + '%'
-GO
-
 -- 2. Tìm kiếm tất cả thông tin trong bảng khách hàng
 create function f_timKiemKhachHang(@query nvarchar(50))
 	returns table 
@@ -340,6 +331,15 @@ create function f_NVXemTheXe(@baixeId char(10))
 		inner join LoaiTheXe
 		on TheXe.MaLoaiThe= LoaiTheXe.MaLoaiThe
 		where b.baixe_id = @baixeId
+GO
+
+-- 1. Tìm kiếm tất cả thông tin có trong view NV xem thẻ xe
+create function f_timKiemTheXe(@query nvarchar(50), @baixeId char(10))
+	returns table 
+	as return
+		SELECT * FROM f_NVXemTheXe(@baixeId)
+		WHERE CONCAT([Mã thẻ], [Tên bãi xe], [Trạng thái], [Loại thẻ]) 
+		LIKE '%' + @query + '%'
 GO
 
 --==================3. CÁC STORE PROCEDURE CHO NHÂN VIÊN==================
