@@ -44,25 +44,28 @@ namespace ParkingSystem.NhanVien
 
         private void comboBoxLoaiTheXe_DropDownClosed(object sender, EventArgs e)
         {
-            string maLoaiThe = comboBoxLoaiTheXe.SelectedValue.ToString().Trim();
-            string query = "select * from f_layMaTheXeTheoLoaiThe(@maloaithe, @baixeid)";
-            SqlCommand command = new SqlCommand(query);
-            command.Parameters.Add("@maloaithe", SqlDbType.Char).Value = maLoaiThe;
-            command.Parameters.Add("@baixeid", SqlDbType.Char).Value = Globals.baixeId;
-
-            comboBoxMaTheXe.DataSource = Globals.getData(command);
-            comboBoxMaTheXe.DisplayMember = "MaTheXe";
-            comboBoxMaTheXe.ValueMember = "MaTheXe";
-
-            DateTime ngayBatDau = dateTimePickerNgayBatDau.Value;
-
-            if (maLoaiThe == "TheTuan")
+            if (comboBoxLoaiTheXe.SelectedValue != null)
             {
-                dateTimePickerNgayKetThuc.Value = ngayBatDau.AddDays(7);
-            }
-            else if (maLoaiThe == "TheThang")
-            {
-                dateTimePickerNgayKetThuc.Value = ngayBatDau.AddDays(30);
+                string maLoaiThe = comboBoxLoaiTheXe.SelectedValue.ToString().Trim();
+                string query = "select * from f_layMaTheXeTheoLoaiThe(@maloaithe, @baixeid)";
+                SqlCommand command = new SqlCommand(query);
+                command.Parameters.Add("@maloaithe", SqlDbType.Char).Value = maLoaiThe;
+                command.Parameters.Add("@baixeid", SqlDbType.Char).Value = Globals.baixeId;
+
+                comboBoxMaTheXe.DataSource = Globals.getData(command);
+                comboBoxMaTheXe.DisplayMember = "MaTheXe";
+                comboBoxMaTheXe.ValueMember = "MaTheXe";
+
+                DateTime ngayBatDau = dateTimePickerNgayBatDau.Value;
+
+                if (maLoaiThe == "TheTuan")
+                {
+                    dateTimePickerNgayKetThuc.Value = ngayBatDau.AddDays(7);
+                }
+                else if (maLoaiThe == "TheThang")
+                {
+                    dateTimePickerNgayKetThuc.Value = ngayBatDau.AddDays(30);
+                }
             }
         }
 
@@ -107,14 +110,19 @@ namespace ParkingSystem.NhanVien
 
         private void buttonTraThe_Click(object sender, EventArgs e)
         {
-            string maTheXe = dataGridViewDangKy.CurrentRow.Cells[2].Value.ToString();
-            try 
+            if (dataGridViewDangKy.CurrentRow != null)
             {
-                dangKy.traTheXe(maTheXe);
-                MessageBox.Show("Trả thẻ thành công!", "Trả thẻ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Trả thẻ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string maTheXe = dataGridViewDangKy.CurrentRow.Cells[2].Value.ToString();
+                try
+                {
+                    dangKy.traTheXe(maTheXe);
+                    MessageBox.Show("Trả thẻ thành công!", "Trả thẻ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Trả thẻ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                DangKyForm_Load(sender, e);
             }
         }
 

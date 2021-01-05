@@ -24,11 +24,15 @@ namespace ParkingSystem.NhanVien
 
         private void CheckInOutForm_Load(object sender, EventArgs e)
         {
-            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(new SqlCommand("select * from view_MaTheXeCheckIn"));
+            SqlCommand cmdMaTheCheckIn = new SqlCommand("select * from f_maTheXeCheckIn(@baixeId)");
+            cmdMaTheCheckIn.Parameters.Add("@baixeId", SqlDbType.Char).Value = Globals.baixeId;
+            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
             comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
             comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
 
-            comboBoxMaTheXeCheckOut.DataSource = Globals.getData(new SqlCommand("select * from view_MaTheXeCheckOut"));
+            SqlCommand cmdMaTheCheckOut = new SqlCommand("select * from f_maTheXeCheckOut(@baixeId)");
+            cmdMaTheCheckOut.Parameters.Add("@baixeId", SqlDbType.Char).Value = Globals.baixeId;
+            comboBoxMaTheXeCheckOut.DataSource = Globals.getData(cmdMaTheCheckOut);
             comboBoxMaTheXeCheckOut.DisplayMember = "MaTheXe";
             comboBoxMaTheXeCheckOut.ValueMember = "MaTheXe";
 
@@ -60,47 +64,55 @@ namespace ParkingSystem.NhanVien
         private void buttonCheckIn_Click(object sender, EventArgs e)
         {
             // get input data
-            string maTheXe = comboBoxMaTheXeCheckIn.Text;
-            string maLoaiXe = comboBoxLoaiXe.SelectedValue.ToString();
-            string bienSo = textBoxBienSo.Text;
-            MemoryStream anhTruoc = new MemoryStream();
-            MemoryStream anhSau = new MemoryStream();
-            pictureBoxAnhTruoc.Image.Save(anhTruoc, pictureBoxAnhTruoc.Image.RawFormat);
-            pictureBoxAnhSau.Image.Save(anhSau, pictureBoxAnhSau.Image.RawFormat);
-            DateTime thoiGianVao = DateTime.Now;
-            try
+            if (comboBoxLoaiXe.SelectedValue != null)
             {
-                xe.insertXe(bienSo, anhTruoc, anhSau, thoiGianVao, maTheXe, maLoaiXe, Globals.baixeId);
-                MessageBox.Show("Check In thành công!", "Check In", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Check In", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string maTheXe = comboBoxMaTheXeCheckIn.Text;
+                string maLoaiXe = comboBoxLoaiXe.SelectedValue.ToString();
+                string bienSo = textBoxBienSo.Text;
+                MemoryStream anhTruoc = new MemoryStream();
+                MemoryStream anhSau = new MemoryStream();
+                pictureBoxAnhTruoc.Image.Save(anhTruoc, pictureBoxAnhTruoc.Image.RawFormat);
+                pictureBoxAnhSau.Image.Save(anhSau, pictureBoxAnhSau.Image.RawFormat);
+                DateTime thoiGianVao = DateTime.Now;
+                try
+                {
+                    xe.insertXe(bienSo, anhTruoc, anhSau, thoiGianVao, maTheXe, maLoaiXe, Globals.baixeId);
+                    MessageBox.Show("Check In thành công!", "Check In", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Check In", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                CheckInOutForm_Load(sender, e);
             }
-            CheckInOutForm_Load(sender, e);
         }
 
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
             // get input data
-            try
+            if (comboBoxMaTheXeCheckOut.Text.Trim() != "" && textBoxBienSo.Text.Trim() != "")
             {
-                string maTheXe = comboBoxMaTheXeCheckOut.Text;
-                string bienSo = textBoxBienSo.Text;
-                DateTime thoiGianRa = DateTime.Now;
                 try
                 {
-                    xe.updateXe(maTheXe, bienSo, thoiGianRa);
-                    MessageBox.Show("Check Out thành công!", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string maTheXe = comboBoxMaTheXeCheckOut.Text;
+                    string bienSo = textBoxBienSo.Text;
+                    DateTime thoiGianRa = DateTime.Now;
+                    try
+                    {
+                        xe.updateXe(maTheXe, bienSo, thoiGianRa);
+                        MessageBox.Show("Check Out thành công!", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } catch(Exception ex) 
-            {
-                MessageBox.Show(ex.Message, "Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CheckInOutForm_Load(sender, e);
             }
-            CheckInOutForm_Load(sender, e);
         }
 
         private void comboBoxMaTheXeCheckOut_DropDownClosed(object sender, EventArgs e)
