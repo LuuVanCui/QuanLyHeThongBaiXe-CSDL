@@ -159,4 +159,42 @@ insert into Users values('1','hieu','12345',N'Nguyễn Hiếu', 083927347,1,'spk
 insert into PhanQuyen values('1','Xem Doanh Thu','admin', 1),('2','Them nhanVien','admin', 1),('3','Them Xe',N'SoatVe', 1),
 ('4','Xem xe trong bai','SoatVe', 1)
 
+<<<<<<< HEAD
 insert into LoaiXe values('LX1', 'Xe May'), ('LX2', 'Xe Hoi')
+=======
+----
+insert into Quyen values('1','1'),('1','2'),('2','3'),('2','4'),('3','3'),('3','4')
+
+insert into LoaiXe values('LX1', 'Xe May'), ('LX2', 'Xe Hoi')  OTO123
+
+insert into Xe values('fqwdq',null,null,'12/10/2020 01:59:56','12/14/2020 01:59:56','OT0123', 'XH','spktE')
+insert into Xe values('fqdq',null,null,'12/10/2020 01:59:56','12/14/2020 01:59:56','XM01243', 'XM','spktSVD   ')
+insert into Xe values('fwdq',null,null,'12/10/2020 01:59:56','12/14/2020 01:59:56','XM10123', 'XM','spktB     ')
+select * from TheXe
+alter
+alter table NhanVien(
+	id char(10),
+	Ten nvarchar(50),
+	SDT bigint,
+	ngayvao datetime,
+	ngaynghi datetime,
+	baixe_id char(10),
+	primary key(id),
+	constraint fk_user_baixe_id
+		foreign key(baixe_id) 
+		references BaiXe(baixe_id)
+		on update cascade
+		on delete cascade
+)
+
+drop table HoaDon
+create table HoaDon(
+	maHD char(10) primary key,
+	tenHD nvarchar(50),
+	tongtien real,
+	ngayin datetime,
+	ghichu nvarchar(200),
+	mathexe char(10) references TheXe(MaTheXe),
+	maloaixe char(10) references LoaiXe(MaLoaiXe)
+)
+>>>>>>> 18aeba2... jfj
