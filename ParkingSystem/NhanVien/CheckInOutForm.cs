@@ -105,12 +105,12 @@ namespace ParkingSystem.NhanVien
                 try
                 {
                     string maTheXe = comboBoxMaTheXeCheckOut.Text;
+                    string maLoaiXe = comboBoxMaTheXeCheckOut.SelectedValue.ToString();
                     string bienSo = textBoxBienSo.Text;
-                    DateTime thoiGianVao = DateTime.Now;
                     try
                     {
                     //    xe.updateXe(maTheXe, bienSo, thoiGianRa);
-                        HoaDonForm hoaDon = new HoaDonForm(maTheXe, bienSo, thoiGianVao);
+                        HoaDonForm hoaDon = new HoaDonForm(maTheXe, bienSo, thoiGianVao, maLoaiXe);
                         hoaDon.ShowDialog(this);
                     }
                     catch (Exception ex)

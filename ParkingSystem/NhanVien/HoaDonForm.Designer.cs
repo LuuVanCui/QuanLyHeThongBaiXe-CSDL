@@ -183,6 +183,7 @@
             this.buttonThanhToan.TabIndex = 3;
             this.buttonThanhToan.Text = "Thanh toán";
             this.buttonThanhToan.UseVisualStyleBackColor = true;
+            this.buttonThanhToan.Click += new System.EventHandler(this.buttonThanhToan_Click);
             // 
             // panel1
             // 

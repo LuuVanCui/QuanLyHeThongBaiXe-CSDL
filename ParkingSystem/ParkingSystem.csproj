@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="common\ALoaiXe.cs" />
     <Compile Include="common\DangKy.cs" />
+    <Compile Include="common\HoaDon.cs" />
     <Compile Include="common\KhachHang.cs" />
     <Compile Include="common\Xe.cs" />
     <Compile Include="My_DB.cs" />

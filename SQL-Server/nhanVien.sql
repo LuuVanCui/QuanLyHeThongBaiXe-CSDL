@@ -464,6 +464,17 @@ create function f_timKiemTheXe(@query nvarchar(50), @baixeId char(10))
 		LIKE '%' + @query + '%'
 GO
 
+-- Lấy giá tiền giữ xe
+create function layGiaGiuXe(@maloaixe char(10), @maloaigia char(10)) 
+	returns real
+	as begin
+		declare @giaTien real
+		select @giaTien = GiaTien 
+		from BangGia where MaLoaiXe=@maloaixe and MaLoaiGia=@maloaigia
+		
+		return @giaTien
+	end
+
 --==================3. CÁC STORE PROCEDURE CHO NHÂN VIÊN==================
 
 -- 1. Thêm khách hàng
@@ -552,6 +563,20 @@ as
 			where BienSo=@BienSo and MaTheXe=@MaTheXe and ThoiGianRa is null and baixe_id=@baixe_id
 		end
 GO
+
+-- Thêm dữ liệu vào bảng hóa đơn
+create proc insertHoaDon 
+	@tregio int,
+	@tongtien real,
+	@ngayin datetime,
+	@ghichu nvarchar(200),
+	@mathexe char(10)
+	as begin
+		declare @maHoaDon char(10)
+		set @maHoaDon = LEFT(CAST(RAND()*1000000000 AS INT),10)
+		insert into HoaDon 
+			values(@maHoaDon, @tregio, @tongtien, @ngayin, @ghichu, @mathexe)
+	end
 
 --==================4. CÁC TRIGGER CHO NHÂN VIÊN==================
 
