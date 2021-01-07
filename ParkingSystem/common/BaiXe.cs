@@ -72,9 +72,7 @@ namespace ParkingSystem.common
                 {
                     mydb.closeConnection();
                     return false;
-                }
- 
-           
+                }      
         }
 
       /*  public bool loaiXeExists(String ma)

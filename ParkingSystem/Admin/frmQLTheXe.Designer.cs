@@ -33,7 +33,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxLoaiThe = new System.Windows.Forms.ComboBox();
+            this.comboBoxTrangThai = new System.Windows.Forms.ComboBox();
             this.comboBoxBaiXe = new System.Windows.Forms.ComboBox();
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
@@ -41,9 +44,6 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxTrangThai = new System.Windows.Forms.ComboBox();
-            this.comboBoxLoaiThe = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -106,6 +106,15 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Trạng thái:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(299, 236);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Tìm kiếm:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -114,6 +123,29 @@
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Bãi Xe";
+            // 
+            // comboBoxLoaiThe
+            // 
+            this.comboBoxLoaiThe.FormattingEnabled = true;
+            this.comboBoxLoaiThe.Items.AddRange(new object[] {
+            "Vãng lai",
+            "Thẻ tuần",
+            "Thẻ tháng"});
+            this.comboBoxLoaiThe.Location = new System.Drawing.Point(690, 113);
+            this.comboBoxLoaiThe.Name = "comboBoxLoaiThe";
+            this.comboBoxLoaiThe.Size = new System.Drawing.Size(300, 28);
+            this.comboBoxLoaiThe.TabIndex = 8;
+            // 
+            // comboBoxTrangThai
+            // 
+            this.comboBoxTrangThai.FormattingEnabled = true;
+            this.comboBoxTrangThai.Items.AddRange(new object[] {
+            "sẵn dùng",
+            "khóa"});
+            this.comboBoxTrangThai.Location = new System.Drawing.Point(690, 176);
+            this.comboBoxTrangThai.Name = "comboBoxTrangThai";
+            this.comboBoxTrangThai.Size = new System.Drawing.Size(300, 28);
+            this.comboBoxTrangThai.TabIndex = 8;
             // 
             // comboBoxBaiXe
             // 
@@ -132,6 +164,7 @@
             this.buttonXoa.TabIndex = 7;
             this.buttonXoa.Text = "Xóa";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonSua
             // 
@@ -142,6 +175,7 @@
             this.buttonSua.TabIndex = 7;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonThem
             // 
@@ -152,6 +186,7 @@
             this.buttonThem.TabIndex = 7;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // textBoxSearch
             // 
@@ -160,6 +195,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(592, 26);
             this.textBoxSearch.TabIndex = 6;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // dataGridView1
             // 
@@ -181,38 +217,6 @@
             this.label1.Size = new System.Drawing.Size(201, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Quản lý thẻ xe";
-            // 
-            // comboBoxTrangThai
-            // 
-            this.comboBoxTrangThai.FormattingEnabled = true;
-            this.comboBoxTrangThai.Items.AddRange(new object[] {
-            "sẵn dùng",
-            "khóa"});
-            this.comboBoxTrangThai.Location = new System.Drawing.Point(690, 176);
-            this.comboBoxTrangThai.Name = "comboBoxTrangThai";
-            this.comboBoxTrangThai.Size = new System.Drawing.Size(300, 28);
-            this.comboBoxTrangThai.TabIndex = 8;
-            // 
-            // comboBoxLoaiThe
-            // 
-            this.comboBoxLoaiThe.FormattingEnabled = true;
-            this.comboBoxLoaiThe.Items.AddRange(new object[] {
-            "Vãng lai",
-            "Thẻ tuần",
-            "Thẻ tháng"});
-            this.comboBoxLoaiThe.Location = new System.Drawing.Point(690, 113);
-            this.comboBoxLoaiThe.Name = "comboBoxLoaiThe";
-            this.comboBoxLoaiThe.Size = new System.Drawing.Size(300, 28);
-            this.comboBoxLoaiThe.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(299, 236);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 20);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Tìm kiếm:";
             // 
             // frmQLTheXe
             // 
