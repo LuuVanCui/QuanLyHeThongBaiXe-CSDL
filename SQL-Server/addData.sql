@@ -159,9 +159,6 @@ insert into Users values('1','hieu','12345',N'Nguyễn Hiếu', 083927347,1,'spk
 insert into PhanQuyen values('1','Xem Doanh Thu','admin', 1),('2','Them nhanVien','admin', 1),('3','Them Xe',N'SoatVe', 1),
 ('4','Xem xe trong bai','SoatVe', 1)
 
-<<<<<<< HEAD
-insert into LoaiXe values('LX1', 'Xe May'), ('LX2', 'Xe Hoi')
-=======
 ----
 insert into Quyen values('1','1'),('1','2'),('2','3'),('2','4'),('3','3'),('3','4')
 
@@ -197,4 +194,3 @@ create table HoaDon(
 	mathexe char(10) references TheXe(MaTheXe),
 	maloaixe char(10) references LoaiXe(MaLoaiXe)
 )
->>>>>>> 18aeba2... jfj

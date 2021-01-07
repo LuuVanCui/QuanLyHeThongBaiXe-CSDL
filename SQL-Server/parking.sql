@@ -99,12 +99,8 @@ create table NhanVien(
 	id char(10),
 	Ten nvarchar(50),
 	SDT bigint,
-<<<<<<< HEAD
 	ngayvao datetime,
 	ngaynghi datetime,
-=======
-	TrangThai 
->>>>>>> 18aeba2... jfj
 	baixe_id char(10),
 	primary key(id),
 	constraint fk_user_baixe_id
