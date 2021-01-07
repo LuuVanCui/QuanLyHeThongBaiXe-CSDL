@@ -17,6 +17,7 @@ namespace ParkingSystem.NhanVien
 
         Xe xe = new Xe();
         SqlCommand cmdMaTheCheckIn = new SqlCommand();
+        SqlCommand cmdMaTheCheckOut = new SqlCommand("select * from f_maTheXeCheckOut(@baixeId)");
 
         private void CheckInOutForm_Load(object sender, EventArgs e)
         {
@@ -26,7 +27,6 @@ namespace ParkingSystem.NhanVien
             comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
             comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
 
-            SqlCommand cmdMaTheCheckOut = new SqlCommand("select * from f_maTheXeCheckOut(@baixeId)");
             cmdMaTheCheckOut.Parameters.Add("@baixeId", SqlDbType.Char).Value = Globals.baixeId;
             comboBoxMaTheXeCheckOut.DataSource = Globals.getData(cmdMaTheCheckOut);
             comboBoxMaTheXeCheckOut.DisplayMember = "MaTheXe";
@@ -79,8 +79,14 @@ namespace ParkingSystem.NhanVien
                 {
                     MessageBox.Show(ex.Message, "Check In", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                // update data
                 radioButtonKhachDangKy_CheckedChanged(sender, e);
                 radioButtonKhachVangLai_CheckedChanged(sender, e);
+
+                comboBoxMaTheXeCheckOut.DataSource = Globals.getData(cmdMaTheCheckOut);
+                comboBoxMaTheXeCheckOut.DisplayMember = "MaTheXe";
+                comboBoxMaTheXeCheckOut.ValueMember = "MaTheXe";
             }
         }
 
@@ -114,7 +120,23 @@ namespace ParkingSystem.NhanVien
             }
         }
 
-        private void comboBoxMaTheXeCheckOut_DropDownClosed(object sender, EventArgs e)
+        private void radioButtonKhachVangLai_CheckedChanged(object sender, EventArgs e)
+        {
+            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachVangLai(@baixeId)";
+            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
+            comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
+            comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
+        }
+
+        private void radioButtonKhachDangKy_CheckedChanged(object sender, EventArgs e)
+        {
+            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachDangKy(@baixeId)";
+            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
+            comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
+            comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
+        }
+
+        private void comboBoxMaTheXeCheckOut_SelectedIndexChanged(object sender, EventArgs e)
         {
             string maXeRa = comboBoxMaTheXeCheckOut.Text;
             SqlCommand command = new SqlCommand("select * from f_layXeRa(@mathexe)");
@@ -128,7 +150,6 @@ namespace ParkingSystem.NhanVien
                 cmd.Parameters.Add("@maloaixe", SqlDbType.Char).Value = row["MaLoaiXe"].ToString();
                 DataTable tableTenLoaiXe = Globals.getData(cmd);
                 comboBoxLoaiXe.Text = tableTenLoaiXe.Rows[0][0].ToString();
-
                 textBoxBienSo.Text = row["BienSo"].ToString();
 
                 // load anh truoc
@@ -149,22 +170,6 @@ namespace ParkingSystem.NhanVien
 
                 break;
             }
-        }
-
-        private void radioButtonKhachVangLai_CheckedChanged(object sender, EventArgs e)
-        {
-            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachVangLai(@baixeId)";
-            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
-            comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
-            comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
-        }
-
-        private void radioButtonKhachDangKy_CheckedChanged(object sender, EventArgs e)
-        {
-            cmdMaTheCheckIn.CommandText = "select * from f_maTheXeCheckInKhachDangKy(@baixeId)";
-            comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
-            comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
-            comboBoxMaTheXeCheckIn.ValueMember = "MaTheXe";
         }
     }
 }
