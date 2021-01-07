@@ -12,33 +12,22 @@ namespace ParkingSystem.NhanVien
 {
     public partial class HoaDonForm : Form
     {
-        public HoaDonForm()
+        string maTheXe;
+        string bienSo;
+        DateTime thoiGianVao;
+        public HoaDonForm(string maTheXe, string bienSo, DateTime thoiGianVao)
         {
             InitializeComponent();
-        }
-
-        string maTheXe;
-        string loaiXe; 
-        string bienSo;
-
-        public HoaDonForm(string bienSo)
-        {
-            this.bienSo = bienSo;
-        }
-
-        DateTime thoiGianVao;
-
-        public HoaDonForm(string maTheXe, string loaiXe, string bienSo, DateTime thoiGianVao)
-        {
             this.maTheXe = maTheXe;
-            this.loaiXe = loaiXe;
             this.bienSo = bienSo;
             this.thoiGianVao = thoiGianVao;
         }
 
         private void HoaDonForm_Load(object sender, EventArgs e)
         {
-            labelBienSo.Text = this.bienSo;
+            labelMaTheXe.Text = maTheXe;
+            labelBienSo.Text = bienSo;
+    
         }
     }
 }

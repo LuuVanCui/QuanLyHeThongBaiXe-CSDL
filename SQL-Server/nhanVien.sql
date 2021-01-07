@@ -426,6 +426,22 @@ create function f_layTenLoaiXe(@maloaixe char(10))
 	end
 GO
 
+
+-- Hàm lấy ra tên loại xe khi truyền mã thẻ xe vào
+create function layTenLoaiXeTheoMaTheXe(@mathexe char(10)) 
+	returns nvarchar(50)
+	as begin
+		declare @maloaixe char(10)
+		
+		select @maloaixe=MaLoaiXe 
+		from TheXe where MaTheXe=@mathexe
+		
+		declare @tenloaixe nvarchar(50)
+		set @tenloaixe = dbo.f_layTenLoaiXe(@maloaixe)
+		return @tenloaixe
+	end
+GO
+
 -- 10. Nhân viên xem bãi xe
 create function f_NVXemTheXe(@baixeId char(10))
 	returns table

@@ -39,8 +39,6 @@
             this.labelMaTheXe = new System.Windows.Forms.Label();
             this.labelBienSo = new System.Windows.Forms.Label();
             this.textBoxGhiChu = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.labelLoaiXe = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTreGio = new System.Windows.Forms.Label();
             this.buttonThanhToan = new System.Windows.Forms.Button();
@@ -62,7 +60,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(45, 360);
+            this.label4.Location = new System.Drawing.Point(45, 348);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 29);
             this.label4.TabIndex = 0;
@@ -92,7 +90,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(66, 225);
+            this.label6.Location = new System.Drawing.Point(66, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 29);
             this.label6.TabIndex = 0;
@@ -112,7 +110,7 @@
             // 
             this.labelTongTien.AutoSize = true;
             this.labelTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTongTien.Location = new System.Drawing.Point(197, 360);
+            this.labelTongTien.Location = new System.Drawing.Point(197, 348);
             this.labelTongTien.Name = "labelTongTien";
             this.labelTongTien.Size = new System.Drawing.Size(131, 29);
             this.labelTongTien.TabIndex = 0;
@@ -141,7 +139,7 @@
             // 
             this.labelBienSo.AutoSize = true;
             this.labelBienSo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBienSo.Location = new System.Drawing.Point(197, 225);
+            this.labelBienSo.Location = new System.Drawing.Point(197, 186);
             this.labelBienSo.Name = "labelBienSo";
             this.labelBienSo.Size = new System.Drawing.Size(94, 29);
             this.labelBienSo.TabIndex = 0;
@@ -156,31 +154,11 @@
             this.textBoxGhiChu.Size = new System.Drawing.Size(213, 68);
             this.textBoxGhiChu.TabIndex = 2;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(70, 159);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 29);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Loại xe:";
-            // 
-            // labelLoaiXe
-            // 
-            this.labelLoaiXe.AutoSize = true;
-            this.labelLoaiXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoaiXe.Location = new System.Drawing.Point(197, 159);
-            this.labelLoaiXe.Name = "labelLoaiXe";
-            this.labelLoaiXe.Size = new System.Drawing.Size(96, 29);
-            this.labelLoaiXe.TabIndex = 0;
-            this.labelLoaiXe.Text = "Loại xe:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 295);
+            this.label2.Location = new System.Drawing.Point(69, 267);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 29);
             this.label2.TabIndex = 0;
@@ -190,7 +168,7 @@
             // 
             this.labelTreGio.AutoSize = true;
             this.labelTreGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTreGio.Location = new System.Drawing.Point(197, 295);
+            this.labelTreGio.Location = new System.Drawing.Point(197, 267);
             this.labelTreGio.Name = "labelTreGio";
             this.labelTreGio.Size = new System.Drawing.Size(98, 29);
             this.labelTreGio.TabIndex = 0;
@@ -216,9 +194,7 @@
             this.panel1.Controls.Add(this.labelTongTien);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.labelLoaiXe);
             this.panel1.Controls.Add(this.labelTreGio);
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.labelBienSo);
             this.panel1.Controls.Add(this.label5);
@@ -236,6 +212,7 @@
             this.ClientSize = new System.Drawing.Size(483, 676);
             this.Controls.Add(this.panel1);
             this.Name = "HoaDonForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
             this.Load += new System.EventHandler(this.HoaDonForm_Load);
             this.panel1.ResumeLayout(false);
@@ -257,8 +234,6 @@
         private System.Windows.Forms.Label labelMaTheXe;
         private System.Windows.Forms.Label labelBienSo;
         private System.Windows.Forms.TextBox textBoxGhiChu;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label labelLoaiXe;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTreGio;
         private System.Windows.Forms.Button buttonThanhToan;

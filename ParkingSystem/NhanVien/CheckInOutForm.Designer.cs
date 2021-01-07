@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxMaTheXeCheckIn = new System.Windows.Forms.ComboBox();
-            this.comboBoxLoaiXe = new System.Windows.Forms.ComboBox();
             this.textBoxBienSo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,15 +45,19 @@
             this.radioButtonKhachVangLai = new System.Windows.Forms.RadioButton();
             this.radioButtonKhachDangKy = new System.Windows.Forms.RadioButton();
             this.buttonCheckIn = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonCheckOut = new System.Windows.Forms.Button();
             this.buttonLoadAnhSau = new System.Windows.Forms.Button();
             this.buttonLoadAnhTruoc = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.labelTenLoaiXe = new System.Windows.Forms.Label();
+            this.radioButtonXeRa = new System.Windows.Forms.RadioButton();
+            this.radioButtonXeVao = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnhTruoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnhSau)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,12 +85,7 @@
             resources.ApplyResources(this.comboBoxMaTheXeCheckIn, "comboBoxMaTheXeCheckIn");
             this.comboBoxMaTheXeCheckIn.FormattingEnabled = true;
             this.comboBoxMaTheXeCheckIn.Name = "comboBoxMaTheXeCheckIn";
-            // 
-            // comboBoxLoaiXe
-            // 
-            resources.ApplyResources(this.comboBoxLoaiXe, "comboBoxLoaiXe");
-            this.comboBoxLoaiXe.FormattingEnabled = true;
-            this.comboBoxLoaiXe.Name = "comboBoxLoaiXe";
+            this.comboBoxMaTheXeCheckIn.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaTheXeCheckIn_SelectedIndexChanged);
             // 
             // textBoxBienSo
             // 
@@ -132,25 +130,24 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.radioButtonKhachVangLai);
             this.panel1.Controls.Add(this.radioButtonKhachDangKy);
             this.panel1.Controls.Add(this.buttonCheckIn);
             this.panel1.Controls.Add(this.buttonCheckOut);
             this.panel1.Controls.Add(this.buttonLoadAnhSau);
             this.panel1.Controls.Add(this.buttonLoadAnhTruoc);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBoxAnhSau);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBoxLoaiXe);
             this.panel1.Controls.Add(this.pictureBoxAnhTruoc);
             this.panel1.Controls.Add(this.comboBoxMaTheXeCheckOut);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBoxBienSo);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.labelTenLoaiXe);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.comboBoxMaTheXeCheckIn);
             resources.ApplyResources(this.panel1, "panel1");
@@ -180,6 +177,13 @@
             this.buttonCheckIn.UseVisualStyleBackColor = true;
             this.buttonCheckIn.Click += new System.EventHandler(this.buttonCheckIn_Click);
             // 
+            // buttonRefresh
+            // 
+            resources.ApplyResources(this.buttonRefresh, "buttonRefresh");
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // buttonCheckOut
             // 
             resources.ApplyResources(this.buttonCheckOut, "buttonCheckOut");
@@ -201,20 +205,39 @@
             this.buttonLoadAnhTruoc.UseVisualStyleBackColor = true;
             this.buttonLoadAnhTruoc.Click += new System.EventHandler(this.buttonLoadAnhTruoc_Click);
             // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
+            // 
+            // labelTenLoaiXe
+            // 
+            resources.ApplyResources(this.labelTenLoaiXe, "labelTenLoaiXe");
+            this.labelTenLoaiXe.Name = "labelTenLoaiXe";
+            // 
+            // radioButtonXeRa
+            // 
+            resources.ApplyResources(this.radioButtonXeRa, "radioButtonXeRa");
+            this.radioButtonXeRa.Name = "radioButtonXeRa";
+            this.radioButtonXeRa.TabStop = true;
+            this.radioButtonXeRa.UseVisualStyleBackColor = true;
+            this.radioButtonXeRa.CheckedChanged += new System.EventHandler(this.radioButtonXeRa_CheckedChanged);
+            // 
+            // radioButtonXeVao
+            // 
+            resources.ApplyResources(this.radioButtonXeVao, "radioButtonXeVao");
+            this.radioButtonXeVao.Name = "radioButtonXeVao";
+            this.radioButtonXeVao.TabStop = true;
+            this.radioButtonXeVao.UseVisualStyleBackColor = true;
+            this.radioButtonXeVao.CheckedChanged += new System.EventHandler(this.radioButtonXeVao_CheckedChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.radioButtonXeRa);
+            this.panel2.Controls.Add(this.radioButtonXeVao);
+            this.panel2.Controls.Add(this.buttonRefresh);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
             // 
             // CheckInOutForm
             // 
@@ -228,6 +251,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnhSau)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -245,17 +270,19 @@
         private System.Windows.Forms.PictureBox pictureBoxAnhSau;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonCheckIn;
         private System.Windows.Forms.Button buttonCheckOut;
         private System.Windows.Forms.Button buttonLoadAnhSau;
         private System.Windows.Forms.Button buttonLoadAnhTruoc;
-        private System.Windows.Forms.ComboBox comboBoxLoaiXe;
         private System.Windows.Forms.TextBox textBoxBienSo;
         private System.Windows.Forms.ComboBox comboBoxMaTheXeCheckOut;
         private System.Windows.Forms.RadioButton radioButtonKhachVangLai;
         private System.Windows.Forms.RadioButton radioButtonKhachDangKy;
+        private System.Windows.Forms.Label labelTenLoaiXe;
+        private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton radioButtonXeRa;
+        private System.Windows.Forms.RadioButton radioButtonXeVao;
     }
 }
