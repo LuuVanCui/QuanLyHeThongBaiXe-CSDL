@@ -1,63 +1,5 @@
 ﻿
 
-use BaiGuiXe
-
-go
-create table KhachHang(
-	kh_id char(10),
-	ten nvarchar(50),
-	sdt bigint,
-	primary key(kh_id)
-)
-
-create table LoaiTheXe(
-	MaLoaiThe char(10),
-	TenLoaiThe nvarchar(50),
-	primary key(MaLoaiThe)
-)
-
-create table BaiXe(
-	baixe_id char(10),
-	Ten nvarchar(50),
-	DiaChi nvarchar(200),
-	SucChua int,
-	primary key(baixe_id)
-)
-
-create table TheXe(
-	MaTheXe char(10),
-	baixe_id char(10),
-	TrangThai nvarchar(50), -- 'Bị mất', 'Đang sử dụng', 'Sẵn sàng sử dụng'
-	MaLoaiThe char(10),
-	primary key(MaTheXe),
-	constraint fk_tx_MaLoaiXe -- tên constraint: fk + tên bảng + tên khóa ngoại
-		foreign key(MaLoaiThe) 
-		references LoaiTheXe(MaLoaiThe)
-		on delete cascade
-		on update cascade,
-	constraint fk_tx_baixe_id
-		foreign key(baixe_id) 
-		references BaiXe(baixe_id)
-		on delete cascade
-		on update cascade
-)
-
-drop table DangKy
-create table DangKy(
-	kh_id char(10),
-	MaTheXe char(10),
-	NgayCap datetime,
-	NgayHetHan datetime,
-	primary key(kh_id, MaTheXe, NgayCap, NgayHetHan),
-	constraint fk_dk_kh_id
-		foreign key(kh_id) references KhachHang(kh_id)
-		on delete cascade 
-		on update cascade,
-	constraint fk_dk_MaTheXe
-		foreign key(MaTheXe) references TheXe(MaTheXe)
-		on delete cascade 
-		on update cascade
-)
 --print datetime(2020-11-25T09:14:21:00.560)
 print DATEADD(day, 1, '2020/11/25')
 select * from DangKy
@@ -191,6 +133,16 @@ insert into TheXe values('XM0123', 'spktE', N'Đang sử dụng', 'VangLai'),('X
 ('XD01223', 'spktE', N'Bị mất', 'TheTuan'),('OT123', 'spktE', N'Đang sử dụng', 'TheThang'),
 ('XM10123', 'spktB', N'Sẵn sàng sử dụng', 'VangLai'),('OT0125', 'spktB', N'Sẵn sàng sử dụng', 'VangLai')
 
+insert into TheXe values('Thang1', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
+						('Thang2', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
+						('Thang3', 'spktB', N'Sẵn sàng sử dụng', 'TheThang'),
+						('Week1', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan'),
+						('Week2', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan'),
+						('Week3', 'spktB', N'Sẵn sàng sử dụng', 'TheTuan'),
+						('VL1', 'spktB', N'Sẵn sàng sử dụng', 'VangLai'),
+						('VL2', 'spktB', N'Sẵn sàng sử dụng', 'VangLai'),
+						('VL3', 'spktB', N'Sẵn sàng sử dụng', 'VangLai')
+
 -----
 print DATEADD(day, 1, '2020/11/25')
 select * from DangKy
@@ -206,8 +158,5 @@ insert into Users values('1','hieu','12345',N'Nguyễn Hiếu', 083927347,1,'spk
 ------
 insert into PhanQuyen values('1','Xem Doanh Thu','admin', 1),('2','Them nhanVien','admin', 1),('3','Them Xe',N'SoatVe', 1),
 ('4','Xem xe trong bai','SoatVe', 1)
-
-----
-insert into Quyen values('1','1'),('1','2'),('2','3'),('2','4'),('3','3'),('3','4')
 
 insert into LoaiXe values('LX1', 'Xe May'), ('LX2', 'Xe Hoi')

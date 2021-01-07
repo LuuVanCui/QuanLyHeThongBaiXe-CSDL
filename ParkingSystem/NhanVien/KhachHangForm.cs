@@ -32,7 +32,7 @@ namespace ParkingSystem.NhanVien
         {
             try
             {
-                kh.insertKhachHang(textBoxCustomerName.Text, textBoxPhone.Text);
+                kh.insertKhachHang(textBoxID.Text.Trim(), textBoxCustomerName.Text.Trim(), textBoxPhone.Text.Trim());
                 MessageBox.Show("Thêm khách hàng thành công!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 KhachHangForm_Load(sender, e);
             } catch(Exception ex)
@@ -43,23 +43,46 @@ namespace ParkingSystem.NhanVien
 
         private void dataGridViewCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBoxCustomerName.Text = dataGridViewCustomer.CurrentRow.Cells[1].Value.ToString();
-            textBoxPhone.Text = dataGridViewCustomer.CurrentRow.Cells[2].Value.ToString();
+            if (dataGridViewCustomer.CurrentRow != null)
+            {
+                textBoxCustomerName.Text = dataGridViewCustomer.CurrentRow.Cells[1].Value.ToString();
+                textBoxPhone.Text = dataGridViewCustomer.CurrentRow.Cells[2].Value.ToString();
+                textBoxID.Text = dataGridViewCustomer.CurrentRow.Cells[0].Value.ToString();
+            }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             try
             {
-                string id = dataGridViewCustomer.CurrentRow.Cells[0].Value.ToString();
-                kh.updateKhachHang(id, textBoxCustomerName.Text, textBoxPhone.Text);
-                MessageBox.Show("Cập nhật thông tin hàng thành công!", "Cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                KhachHangForm_Load(sender, e);
+                if (dataGridViewCustomer.CurrentRow != null)
+                {
+                    string id = dataGridViewCustomer.CurrentRow.Cells[0].Value.ToString();
+                    kh.updateKhachHang(id, textBoxCustomerName.Text, textBoxPhone.Text);
+                    MessageBox.Show("Cập nhật thông tin hàng thành công!", "Cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    KhachHangForm_Load(sender, e);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string searchQuery = textBoxSearch.Text;
+            string query = "select * from f_timKiemKhachHang(@query)";
+            SqlCommand command = new SqlCommand(query);
+            command.Parameters.Add("@query", SqlDbType.NVarChar).Value = searchQuery;
+            dataGridViewCustomer.DataSource = Globals.getData(command);
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            textBoxID.Text = "";
+            textBoxPhone.Text = "";
+            textBoxCustomerName.Text = "";
         }
     }
 }

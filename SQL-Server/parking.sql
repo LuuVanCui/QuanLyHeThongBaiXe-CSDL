@@ -1,7 +1,9 @@
-﻿create table KhachHang(
+﻿
+-- Tạo bảng cho cơ sở dữ liệu
+create table KhachHang(
 	kh_id char(10),
 	ten nvarchar(50),
-	sdt char(15),
+	sdt char(15) unique,
 	primary key(kh_id)
 )
 
@@ -42,7 +44,7 @@ create table DangKy(
 	MaTheXe char(10),
 	NgayCap date,
 	NgayHetHan date,
-	primary key(kh_id, MaTheXe, NgayCap, NgayHetHan),
+	primary key(kh_id, MaTheXe),
 	constraint fk_dk_kh_id
 		foreign key(kh_id) references KhachHang(kh_id)
 		on delete cascade 
@@ -68,7 +70,7 @@ create table BangGia(
 )
 
 create table Xe(
-	BienSo int,
+	BienSo varchar(10),
 	AnhTruoc image,
 	AnhSau image,
 	ThoiGianVao datetime,
@@ -88,13 +90,17 @@ alter table Xe
 	foreign key(MaTheXe) references TheXe(MaTheXe)
 go
 
-create table Users(
+alter table Xe
+	with check add constraint fk_check_maloaixe
+	foreign key(MaLoaiXe) references LoaiXe(MaLoaiXe)
+go
+
+create table NhanVien(
 	id char(10),
-	TenDangNhap varchar(20) unique,
-	MatKhau varchar(20),
 	Ten nvarchar(50),
 	SDT bigint,
-	TrangThai bit,
+	ngayvao datetime,
+	ngaynghi datetime,
 	baixe_id char(10),
 	primary key(id),
 	constraint fk_user_baixe_id
@@ -104,49 +110,12 @@ create table Users(
 		on delete cascade
 )
 
-create table PhanQuyen(
-	id_chucnang char(10),
-	TenChucNang nvarchar(50),
-	LoaiNguoiDung nvarchar(50),
-	DuocCapQuyen bit,
-	primary key(id_chucnang)
+create table HoaDon(
+	maHD char(10) primary key,
+	tenHD nvarchar(50),
+	tongtien real,
+	ngayin datetime,
+	ghichu nvarchar(200),
+	mathexe char(10) references TheXe(MaTheXe)
 )
 
-create table Quyen(
-	userId char(10),
-	id_chucnang char(10),
-	primary key(userId, id_chucnang),
-	constraint fk_quyen_user_id
-		foreign key(userId) 
-		references Users(id)
-		on delete cascade
-		on update cascade,
-	constraint fk_quyen_chucnang_id
-		foreign key(id_chucnang) 
-		references PhanQuyen(id_chucnang)
-		on delete cascade
-		on update cascade
-)
-
-
--- Trigger cập nhật trạng thái của thẻ xe khi xe vào của khách vãng lai
-create trigger tr_capNhatTrangThaiXeRaVao
-	on Xe after insert, update as
-	begin
-		declare @mathexe char(10), @tgRa datetime
-		select @mathexe = MaTheXe, @tgRa = ThoiGianRa from inserted
-		if (@tgRa is null)
-			begin
-				update TheXe
-				set TrangThai='Đang sử dụng'
-				where MaTheXe = @mathexe
-				print 'Đã cập nhật trạng thái của xe vào'
-			end
-		else 
-			begin
-				update TheXe
-				set TrangThai='Sẵn sàng sử dụng'
-				where MaTheXe = @mathexe
-				print 'Đã cập nhật trạng thái của xe ra'
-			end
-	end

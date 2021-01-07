@@ -1,4 +1,25 @@
-﻿-- Insert table Khách Hàng 
+﻿
+select * from DangKy
+
+alter view view_KhachHang as
+	select kh_id as [Mã KH], ten as [Tên KH], sdt as [SĐT]
+	from KhachHang
+
+	select * from view_KhachHang
+
+-- Hàm tìm kiếm khách hàng
+create function f_timKiemKhachHang(@query nvarchar(50))
+	returns table 
+	as return
+		SELECT * FROM view_KhachHang 
+		WHERE CONCAT([Mã KH], [Tên KH], 
+		SĐT) 
+		LIKE '%' + @query + '%'
+
+	-- Test f_timKiemTrongViewDangKy(@query nvarchar(50))
+	select * from f_timKiemKhachHang('c')
+
+-- Insert table Khách Hàng 
 create proc p_InsertKhachHang @id char(10), @name nvarchar(50), @phone char(15)
 	as begin
 		insert into KhachHang
@@ -44,8 +65,3 @@ create function f_findCustomerById(@id char(10))
 drop function f_findCustomerById
 
 select * from f_findCustomerById('KH1')
-
-
--- các hàm thủ tục view bên admin
---view Lấy KH theo bãi xe
---

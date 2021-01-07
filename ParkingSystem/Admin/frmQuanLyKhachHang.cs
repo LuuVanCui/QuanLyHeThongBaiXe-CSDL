@@ -32,7 +32,7 @@ namespace ParkingSystem.Admin
         {
             try
             {
-                kh.insertKhachHang(textBoxTenKH.Text, textBoxSDT.Text);
+                kh.insertKhachHang(textBoxID.Text, textBoxTenKH.Text, textBoxSDT.Text);
                 MessageBox.Show("Thêm khách hàng thành công!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmQuanLyKhachHang_Load(sender, e);
             }

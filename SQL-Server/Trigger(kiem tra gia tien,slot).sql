@@ -27,6 +27,7 @@ update Xe set ThoiGianRa='2020-12-06 12:40:16.363' where MaTheXe='XH0123'
 
 
 -- trigger kiem tra giá tiền nhap vào ở bảng giá phải là số dương
+-- Thay bằng add constrant
 create trigger tr_CheckPrice on BangGia for insert, update
 as
 	begin
@@ -63,3 +64,27 @@ as
 	select * from BaiXe
 	delete from BaiXe
 	insert into BaiXe values('spktE', N'Bãi Sư Phạm Kỹ Thuật Khu E', N'Khu E, DH SPKT, Thủ Đức, HCM', -500)
+
+
+
+-- Trigger cập nhật trạng thái của thẻ xe khi xe vào
+create trigger tr_capNhatTrangThaiXeRaVao
+	on Xe after insert, update as
+	begin
+		declare @mathexe char(10), @tgRa datetime
+		select @mathexe = MaTheXe, @tgRa = ThoiGianRa from inserted
+		if (@tgRa is null)
+			begin
+				update TheXe
+				set TrangThai= N'Đang sử dụng'
+				where MaTheXe = @mathexe
+				print N'Đã cập nhật trạng thái của xe vào'
+			end
+		else 
+			begin
+				update TheXe
+				set TrangThai=N'Sẵn sàng sử dụng'
+				where MaTheXe = @mathexe
+				print N'Đã cập nhật trạng thái của xe ra'
+			end
+	end
