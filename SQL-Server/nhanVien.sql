@@ -323,7 +323,7 @@ create function f_layTenLoaiXe(@maloaixe char(10))
 	returns nvarchar(50)
 	as begin
 		declare @tenloaixe nvarchar(50)
-		select @tenloaixe=TenLoaiXe from LoaiXe where MaLoaiXe='LX1'
+		select @tenloaixe=TenLoaiXe from LoaiXe where MaLoaiXe=@maloaixe
 		return @tenloaixe
 	end
 GO
