@@ -93,7 +93,7 @@ namespace ParkingSystem.NhanVien
 
                     comboBoxMaTheXeCheckOut.DataSource = Globals.getData(cmdMaTheCheckOut);
                     comboBoxMaTheXeCheckOut.DisplayMember = "MaTheXe";
-                    comboBoxMaTheXeCheckOut.ValueMember = "MaTheXe";
+                    comboBoxMaTheXeCheckOut.ValueMember = "MaLoaiXe";
                 }
                 catch (Exception ex)
                 {
@@ -117,9 +117,17 @@ namespace ParkingSystem.NhanVien
                     string bienSo = textBoxBienSo.Text;
                     try
                     {
-                    //    xe.updateXe(maTheXe, bienSo, thoiGianRa);
                         HoaDonForm hoaDon = new HoaDonForm(maTheXe, bienSo, thoiGianVao, maLoaiXe);
                         hoaDon.ShowDialog(this);
+
+                        // Cập nhật data cho combobox
+                        comboBoxMaTheXeCheckOut.DataSource = Globals.getData(cmdMaTheCheckOut);
+                        comboBoxMaTheXeCheckOut.DisplayMember = "MaTheXe";
+                        comboBoxMaTheXeCheckOut.ValueMember = "MaLoaiXe";
+
+                        comboBoxMaTheXeCheckIn.DataSource = Globals.getData(cmdMaTheCheckIn);
+                        comboBoxMaTheXeCheckIn.DisplayMember = "MaTheXe";
+                        comboBoxMaTheXeCheckIn.ValueMember = "MaLoaiXe";
                     }
                     catch (Exception ex)
                     {
@@ -132,7 +140,7 @@ namespace ParkingSystem.NhanVien
                 }
             } else
             {
-                MessageBox.Show("Lỗi dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn phải chọn mã thẻ xe.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
