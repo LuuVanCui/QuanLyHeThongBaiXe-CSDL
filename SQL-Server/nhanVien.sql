@@ -345,6 +345,11 @@ insert into TheXe values('CVL_XH002', 'spktC', N'Sẵn sàng sử dụng', 'Vang
 insert into TheXe values('CVL_XH003', 'spktC', N'Sẵn sàng sử dụng', 'VangLai', 'XH');
 insert into TheXe values('CVL_XH004', 'spktC', N'Sẵn sàng sử dụng', 'VangLai', 'XH');
 insert into TheXe values('CVL_XH005', 'spktC', N'Sẵn sàng sử dụng', 'VangLai', 'XH');
+
+insert into NhanVien values('admin1', 'Nguyễn Văn A', 0932932934, null, null, 'admin', 'admin', 'admin', null)
+insert into NhanVien values('nv1', 'Nguyễn Hiếu', 0938283923, '8/1/2020', null, 'nhanvien', '123', 'nhanvien', 'spktA')
+insert into NhanVien values('nv2', 'Văn Cụi', 0322849343, '8/1/2020', null, 'nhanvien', '123', 'nhanvien', 'spktB')
+insert into NhanVien values('nv3', 'Quang Đại', 0364948383, '8/1/2020', null, 'nhanvien', '123', 'nhanvien', 'spktC')
 GO
 
 --==================2. CÁC FUNCTION CHO NHÂN VIÊN==================
