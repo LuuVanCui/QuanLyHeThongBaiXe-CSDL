@@ -24,12 +24,20 @@ namespace ParkingSystem
 
         public static DataTable getData(SqlCommand cmd)
         {
-            //My_DB mydb = new My_DB(serverName, username, password);
-            My_DB mydb = new My_DB();
-            cmd.Connection = mydb.getConnection;
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
-            adapter.Fill(table);
+            try
+            {
+                //My_DB mydb = new My_DB(serverName, username, password);
+                My_DB mydb = new My_DB();
+                cmd.Connection = mydb.getConnection;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                
+                adapter.Fill(table);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return table;
         }
     }
@@ -43,8 +51,8 @@ namespace ParkingSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            Application.Run(new AdminDashboard());
+            Application.Run(new LoginForm());
+           // Application.Run(new AdminDashboard());
            // Application.Run(new EmployeeDashBoardForm());
         }
     }

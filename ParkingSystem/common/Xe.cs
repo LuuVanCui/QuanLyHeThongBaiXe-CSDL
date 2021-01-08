@@ -29,7 +29,7 @@ namespace ParkingSystem.common
 
         public DataTable searchXe(String searchKey)
         {
-            SqlCommand cmd = new SqlCommand("exec p_searchXe @key");
+            SqlCommand cmd = new SqlCommand("select * from f_searchXe(@key)");
             cmd.Connection = mydb.getConnection;
             cmd.Parameters.Add("@key", SqlDbType.NVarChar).Value = searchKey;
 
