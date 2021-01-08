@@ -17,7 +17,7 @@ namespace ParkingSystem.NhanVien
 
         Xe xe = new Xe();
         SqlCommand cmdMaTheCheckIn = new SqlCommand();
-        SqlCommand cmdMaTheCheckOut = new SqlCommand("select * from f_maTheXeCheckOut(@baixeId)");
+        SqlCommand cmdMaTheCheckOut = new SqlCommand();
         DateTime thoiGianVao;
 
         private void CheckInOutForm_Load(object sender, EventArgs e)
@@ -30,6 +30,7 @@ namespace ParkingSystem.NhanVien
             comboBoxMaTheXeCheckIn.ValueMember = "MaLoaiXe";
 
             cmdMaTheCheckOut.Parameters.Add("@baixeId", SqlDbType.Char).Value = Globals.baixeId;
+            cmdMaTheCheckOut.CommandText = "select* from f_maTheXeCheckOut(@baixeId)";
             comboBoxMaTheXeCheckOut.DataSource = Globals.getData(cmdMaTheCheckOut);
             comboBoxMaTheXeCheckOut.DisplayMember = "MaTheXe";
             comboBoxMaTheXeCheckOut.ValueMember = "MaLoaiXe";
@@ -62,12 +63,20 @@ namespace ParkingSystem.NhanVien
         {
             // get input data
             string maLoaiXe = comboBoxMaTheXeCheckIn.SelectedValue.ToString().Trim();
-            MessageBox.Show(maLoaiXe);
+            
             if (pictureBoxAnhTruoc.Image != null && pictureBoxAnhSau.Image != null)
             {
                 string maTheXe = comboBoxMaTheXeCheckIn.Text.Trim();
-                
                 string bienSo = textBoxBienSo.Text.Trim();
+                if (labelTenLoaiXe.Text.Trim() != "Xe đạp")
+                {
+                    if (bienSo == "")
+                    {
+                        MessageBox.Show("Bạn phải nhập biển số.", "Lỗi input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    } 
+                }
+
                 MemoryStream anhTruoc = new MemoryStream();
                 MemoryStream anhSau = new MemoryStream();
                 pictureBoxAnhTruoc.Image.Save(anhTruoc, pictureBoxAnhTruoc.Image.RawFormat);
@@ -92,15 +101,14 @@ namespace ParkingSystem.NhanVien
                 }
             } else
             {
-                MessageBox.Show("Lỗi dữ liệu input!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn phải chọn ảnh trước và sau cho xe!", "Lỗi input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
             // get input data
-            if (comboBoxMaTheXeCheckOut.Text.Trim() != "" && textBoxBienSo.Text.Trim() != "")
+            if (comboBoxMaTheXeCheckOut.SelectedValue != null)
             {
                 try
                 {
@@ -147,6 +155,7 @@ namespace ParkingSystem.NhanVien
         private void comboBoxMaTheXeCheckOut_SelectedIndexChanged(object sender, EventArgs e)
         {
             string maXeRa = comboBoxMaTheXeCheckOut.Text;
+            textBoxBienSo.Enabled = false;
 
             SqlCommand cmdTenLoaiXe = new SqlCommand("select dbo.layTenLoaiXeTheoMaTheXe(@mathexe)");
             cmdTenLoaiXe.Parameters.Add("@mathexe", SqlDbType.Char).Value = maXeRa;
@@ -178,7 +187,18 @@ namespace ParkingSystem.NhanVien
                 }
 
                 thoiGianVao = (DateTime)row["ThoiGianVao"];
-                
+
+                if (labelTenLoaiXe.Text.Trim() == "Xe đạp")
+                {
+                    label2.Visible = false;
+                    textBoxBienSo.Visible = false;
+                }
+                else
+                {
+                    label2.Visible = true;
+                    textBoxBienSo.Visible = true;
+                }
+
                 break;
             }
         }
@@ -186,10 +206,22 @@ namespace ParkingSystem.NhanVien
         private void comboBoxMaTheXeCheckIn_SelectedIndexChanged(object sender, EventArgs e)
         {
             string maTheXe = comboBoxMaTheXeCheckIn.Text;
+            textBoxBienSo.Enabled = true;
             SqlCommand cmd = new SqlCommand("select dbo.layTenLoaiXeTheoMaTheXe(@mathexe)");
             cmd.Parameters.Add("@mathexe", SqlDbType.Char).Value = maTheXe;
             DataTable tenLoaiXeTable = Globals.getData(cmd);
             labelTenLoaiXe.Text = tenLoaiXeTable.Rows[0][0].ToString();
+
+            if (labelTenLoaiXe.Text.Trim() == "Xe đạp")
+            {
+                label2.Visible = false;
+                textBoxBienSo.Visible = false;
+            }
+            else
+            {
+                label2.Visible = true;
+                textBoxBienSo.Visible = true;
+            }
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
@@ -198,6 +230,8 @@ namespace ParkingSystem.NhanVien
             textBoxBienSo.Text = "";
             pictureBoxAnhTruoc.Image = null;
             pictureBoxAnhSau.Image = null;
+            comboBoxMaTheXeCheckIn.Text = "";
+            comboBoxMaTheXeCheckOut.Text = "";
         }
 
         private void radioButtonXeVao_CheckedChanged(object sender, EventArgs e)

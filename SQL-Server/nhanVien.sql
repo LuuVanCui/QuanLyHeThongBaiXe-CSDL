@@ -396,16 +396,27 @@ GO
 create function f_maTheXeCheckInKhachDangKy(@baixeId char(10)) 
 	returns table
 	as return
-		select tx.MaTheXe from TheXe tx, DangKy dk
-		where tx.MaTheXe=dk.MaTheXe and tx.baixe_id = @baixeId and tx.TrangThai=N'Đang sử dụng'
+		-- Lấy tất cả các khách hàng đang đăng ký giữ xe trong bãi
+		select tx.MaTheXe, tx.MaLoaiXe from TheXe tx, DangKy dk
+		where tx.MaTheXe=dk.MaTheXe and
+			tx.baixe_id = @baixeId and tx.TrangThai=N'Đang sử dụng'
+			and tx.MaTheXe not in (-- Lấy tất cả các Mã thẻ xe đang được giữ trong bãi
+									select tx.MaTheXe from TheXe tx, DangKy dk, Xe x
+									where dk.MaTheXe=tx.MaTheXe and tx.MaTheXe=x.MaTheXe and
+										tx.baixe_id=@baixeId and tx.TrangThai=N'Đang sử dụng' and 
+										x.ThoiGianRa is null)
+
+		
 GO
 
--- 7. Lấy tất cả các mã thẻ xe với trạng thái đang sử dụng của 1 bãi xe nào đó
+-- Lấy tất cả các mã thẻ xe của khách đăng ký đang được giữ trong bãi
 create function f_maTheXeCheckOut(@baixeId char(10)) 
 	returns table
 	as return
-		select * from TheXe
-		where TrangThai=N'Đang sử dụng'	and baixe_id = @baixeId
+		select tx.MaTheXe, tx.MaLoaiXe from TheXe tx, DangKy dk, Xe x
+		where dk.MaTheXe=tx.MaTheXe and tx.MaTheXe=x.MaTheXe and
+			tx.baixe_id=@baixeId and tx.TrangThai=N'Đang sử dụng' and 
+			x.ThoiGianRa is null
 GO
 
 -- 8. Hàm lấy xe ra, truyền vào mã thẻ xe, kết quả là thông tin của xe trong bãi cần lấy ra
