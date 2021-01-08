@@ -46,64 +46,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AdminDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\AdminDashboard.Designer.cs">
+    <Compile Include="Admin\AdminDashboard.cs" />
+    <Compile Include="Admin\AdminDashboard.designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmPhanQuyen.cs">
+    <Compile Include="Admin\frmBaiXe.cs" />
+    <Compile Include="Admin\frmBaiXe.designer.cs">
+      <DependentUpon>frmBaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmPhanQuyen.Designer.cs">
-      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
+    <Compile Include="Admin\frmDoanhThu.Designer.cs">
+      <DependentUpon>frmDoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmQLDangKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\frmQLDangKy.Designer.cs">
-      <DependentUpon>frmQLDangKy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\frmQLGiaTien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\frmQLGiaTien.Designer.cs">
+    <Compile Include="Admin\frmQLGiaTien.cs" />
+    <Compile Include="Admin\frmQLGiaTien.designer.cs">
       <DependentUpon>frmQLGiaTien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmQLLoaiXe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\frmQLLoaiXe.Designer.cs">
+    <Compile Include="Admin\frmQLLoaiXe.cs" />
+    <Compile Include="Admin\frmQLLoaiXe.designer.cs">
       <DependentUpon>frmQLLoaiXe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmQLTheXe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\frmQLTheXe.Designer.cs">
-      <DependentUpon>frmQLTheXe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\frmQLXe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\frmQLXe.Designer.cs">
-      <DependentUpon>frmQLXe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\frmQuanLyKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\frmQuanLyKhachHang.Designer.cs">
-      <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\frmQLNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\frmQLNhanVien.Designer.cs">
+    <Compile Include="Admin\frmQLNhanVien.cs" />
+    <Compile Include="Admin\frmQLNhanVien.designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\frmQLTheXe.cs" />
+    <Compile Include="Admin\frmQLTheXe.designer.cs">
+      <DependentUpon>frmQLTheXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmQLXe.cs" />
+    <Compile Include="Admin\frmQLXe.designer.cs">
+      <DependentUpon>frmQLXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="common\ALoaiXe.cs" />
+    <Compile Include="common\BaiXe.cs" />
     <Compile Include="common\DangKy.cs" />
+    <Compile Include="common\GiaTien.cs" />
     <Compile Include="common\HoaDon.cs" />
     <Compile Include="common\KhachHang.cs" />
+    <Compile Include="common\LoaiXe.cs" />
+    <Compile Include="common\TheXe.cs" />
+    <Compile Include="common\Users.cs" />
     <Compile Include="common\Xe.cs" />
     <Compile Include="My_DB.cs" />
     <Compile Include="NhanVien\BangGiaForm.cs">
@@ -159,20 +144,26 @@
     <EmbeddedResource Include="Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmBaiXe.resx">
+      <DependentUpon>frmBaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmDoanhThu.resx">
+      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLGiaTien.resx">
       <DependentUpon>frmQLGiaTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLLoaiXe.resx">
       <DependentUpon>frmQLLoaiXe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmQLNhanVien.resx">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLTheXe.resx">
       <DependentUpon>frmQLTheXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmQLXe.resx">
       <DependentUpon>frmQLXe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\frmQuanLyKhachHang.resx">
-      <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\BangGiaForm.resx">
       <DependentUpon>BangGiaForm.cs</DependentUpon>

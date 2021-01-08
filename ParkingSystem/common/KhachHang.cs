@@ -53,5 +53,23 @@ namespace ParkingSystem.common
                 return false;
             }
         }
+        public bool deleteKhachHang(string id)
+        {
+            string query = "exec p_deleteKhachHang @id";
+            SqlCommand cmd = new SqlCommand(query, mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Char).Value = id;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
     }
 }
