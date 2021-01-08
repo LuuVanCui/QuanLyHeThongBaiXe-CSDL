@@ -65,8 +65,8 @@ GO
 create table DangKy(
 	kh_id char(10),
 	MaTheXe char(10),
-	NgayCap date,
-	NgayHetHan date,
+	NgayCap datetime,
+	NgayHetHan datetime,
 	primary key(kh_id, MaTheXe),
 	constraint fk_dk_kh_id
 		foreign key(kh_id) references KhachHang(kh_id)
@@ -96,8 +96,7 @@ create table Xe(
 	ThoiGianRa datetime,
 	MaTheXe char(10),
 	MaLoaiXe char(10),
-	baixe_id char(10),
-	primary key(BienSo, ThoiGianVao),
+	baixe_id char(10)
 )
 go
 
@@ -122,6 +121,9 @@ create table NhanVien(
 	SDT bigint,
 	ngayvao datetime,
 	ngaynghi datetime,
+	tendangnhap varchar(50),
+	matkhau varchar(50),
+	quyen varchar(50),
 	baixe_id char(10),
 	primary key(id),
 	constraint fk_user_baixe_id
