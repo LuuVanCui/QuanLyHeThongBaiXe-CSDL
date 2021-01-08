@@ -483,7 +483,32 @@ create function layGiaGiuXe(@maloaixe char(10), @maloaigia char(10))
 		
 		return @giaTien
 	end
+GO
 
+-- Kiểm tra thẻ có phải là thẻ dành cho khách vãng lai hay không
+create function laTheVangLai(@mathexe char(10))
+	returns int
+	begin
+		if exists(select * from TheXe
+			where MaLoaiThe='VangLai' and MaTheXe=@mathexe)
+			return 1
+		return 0
+	end
+GO
+
+-- Tính số ngày trễ của thẻ xe đã đăng ký
+create function f_soNgayTreCuaTheDangKy(@mathexe char(10))
+	returns int
+	as begin
+		declare @ngayhethan datetime
+		select @ngayhethan = dk.NgayHetHan from TheXe tx, DangKy dk
+		where tx.MaTheXe=dk.MaTheXe and tx.MaTheXe=@mathexe
+	
+		declare @soNgayHetHan int
+		set @soNgayHetHan = DATEDIFF (DAY, @ngayhethan, GETDATE())
+		return @soNgayHetHan
+	end
+GO
 --==================3. CÁC STORE PROCEDURE CHO NHÂN VIÊN==================
 
 -- 1. Thêm khách hàng
@@ -586,7 +611,7 @@ create proc insertHoaDon
 		insert into HoaDon 
 			values(@maHoaDon, @tregio, @tongtien, @ngayin, @ghichu, @mathexe)
 	end
-
+GO
 --==================4. CÁC TRIGGER CHO NHÂN VIÊN==================
 
 -- 1. Cập nhật trạng thái của thẻ xe sau khi khách hàng đăng ký giữ xe
@@ -607,22 +632,27 @@ create trigger tr_capNhatTrangThaiXeRaVao
 	begin
 		declare @mathexe char(10), @tgRa datetime
 		select @mathexe = MaTheXe, @tgRa = ThoiGianRa from inserted
-		if (@tgRa is null)
+
+		if (dbo.laTheVangLai(@mathexe) = 1)
 			begin
-				update TheXe
-				set TrangThai= N'Đang sử dụng'
-				where MaTheXe = @mathexe
-				print N'Đã cập nhật trạng thái của xe vào'
-			end
-		else 
-			begin
-				update TheXe
-				set TrangThai=N'Sẵn sàng sử dụng'
-				where MaTheXe = @mathexe
-				print N'Đã cập nhật trạng thái của xe ra'
+				if (@tgRa is null)
+					begin
+						update TheXe
+						set TrangThai= N'Đang sử dụng'
+						where MaTheXe = @mathexe
+						print N'Đã cập nhật trạng thái của xe vào'
+					end
+				else 
+					begin
+						update TheXe
+						set TrangThai=N'Sẵn sàng sử dụng'
+						where MaTheXe = @mathexe
+						print N'Đã cập nhật trạng thái của xe ra'
+					end
 			end
 	end
 GO
+
 
 -- 3. Trigger kiểm tra thời gian xe ra khỏi bãi có hợp lệ không?
 create trigger tr_checkTimeOut on Xe 
@@ -661,4 +691,22 @@ as
 				return
 			end
 	end
+GO
+
+create trigger tr_baoTheHetHan on Xe
+for insert
+as begin
+	declare @mathexe char(10)
+	declare @ngayhethan datetime
+	
+	select @mathexe=MaTheXe from inserted
+	select @ngayhethan=NgayHetHan from DangKy
+	where MaTheXe=@mathexe
+
+	if (@ngayhethan < GETDATE())
+		begin
+			raiserror(N'Thẻ bị quá hạn.',16,1)
+			rollback tran
+		end
+end
 GO

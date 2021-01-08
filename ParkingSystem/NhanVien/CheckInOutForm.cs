@@ -117,8 +117,47 @@ namespace ParkingSystem.NhanVien
                     string bienSo = textBoxBienSo.Text;
                     try
                     {
-                        HoaDonForm hoaDon = new HoaDonForm(maTheXe, bienSo, thoiGianVao, maLoaiXe);
-                        hoaDon.ShowDialog(this);
+                        SqlCommand cmd = new SqlCommand("select dbo.laTheVangLai(@mathexe)");
+                        cmd.Parameters.Add("@mathexe", SqlDbType.Char).Value = maTheXe;
+                        DataTable table = Globals.getData(cmd);
+
+                        int laTheVangLai = int.Parse(table.Rows[0][0].ToString());
+
+                        if (laTheVangLai == 1)
+                        {
+                            HoaDonForm hoaDon = new HoaDonForm(maTheXe, bienSo, thoiGianVao, maLoaiXe);
+                            hoaDon.ShowDialog(this);
+                        } else
+                        {
+                            SqlCommand cmdSoNgayTre = new SqlCommand("select dbo.f_soNgayTreCuaTheDangKy(@mathexe)");
+                            cmdSoNgayTre.Parameters.Add("@mathexe", SqlDbType.Char).Value = maTheXe;
+                            DataTable tableSoNgayQuaHan = Globals.getData(cmdSoNgayTre);
+                            int soNgayQuaHanGiuXe = int.Parse(tableSoNgayQuaHan.Rows[0][0].ToString());
+                            if (soNgayQuaHanGiuXe > 0)
+                            {
+                                // Lấy tiền phạt
+                                SqlCommand command = new SqlCommand("select dbo.layGiaGiuXe(@maloaixe, @maloaigia)");
+                                command.Parameters.Add("@maloaixe", SqlDbType.Char).Value = maLoaiXe;
+                                command.Parameters.Add("@maloaigia", SqlDbType.Char).Value = "Phat" + maLoaiXe;
+                                DataTable giaGiuXeTable = Globals.getData(command);
+
+                                double giaPhat = double.Parse(giaGiuXeTable.Rows[0][0].ToString());
+                                double tongTienPhat = soNgayQuaHanGiuXe * giaPhat;
+                                string message = "Xe đăng đã quá hạn " + soNgayQuaHanGiuXe + " ngày. Số tiền phạt của bạn là: " + tongTienPhat + " đồng";
+
+                                if (MessageBox.Show(message, "Phạt quá hạn", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                                {
+                                    xe.updateXe(maTheXe, bienSo, DateTime.Now);
+                                    HoaDon hoaDon = new HoaDon();
+                                    hoaDon.insertHoaDon(soNgayQuaHanGiuXe, tongTienPhat, DateTime.Now, "Xe bị quá hạn", maTheXe);
+                                    MessageBox.Show("Thanh toán thành công.", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                }
+                            } else
+                            {
+                                xe.updateXe(maTheXe, bienSo, DateTime.Now);
+                                MessageBox.Show("Mời xe ra.", "Xe đăng ký", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
 
                         // Cập nhật data cho combobox
                         comboBoxMaTheXeCheckOut.DataSource = Globals.getData(cmdMaTheCheckOut);
