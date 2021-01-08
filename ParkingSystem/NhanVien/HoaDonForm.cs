@@ -29,10 +29,10 @@ namespace ParkingSystem.NhanVien
         }
 
         int soGioTre;
-        double tongTien;
+        float tongTien;
 
         private void HoaDonForm_Load(object sender, EventArgs e)
-        {   
+        {
             try
             {
                 TimeSpan time = DateTime.Now - thoiGianVao;
@@ -51,24 +51,25 @@ namespace ParkingSystem.NhanVien
                     // Phạt
                     command.Parameters.Add("@maloaigia", SqlDbType.Char).Value = "Phat" + maLoaiXe;
                     DataTable giaGiuXeTable = Globals.getData(command);
-                    tongTien = soGioTre * Double.Parse(giaGiuXeTable.Rows[0][0].ToString());
+                
+                    tongTien = soGioTre * float.Parse(giaGiuXeTable.Rows[0][0].ToString().Trim());
                 }
                 else
                 {
                     // Đúng giờ
                     command.Parameters.Add("@maloaigia", SqlDbType.Char).Value = "Giu" + maLoaiXe;
                     DataTable giaGiuXeTable = Globals.getData(command);
-                    double giaGiuXe = Double.Parse(giaGiuXeTable.Rows[0][0].ToString());
+                    float giaGiuXe = float.Parse(giaGiuXeTable.Rows[0][0].ToString().Trim());
                     tongTien = giaGiuXe;
                 }
 
                 labelTongTien.Text = tongTien.ToString() + " đồng";
-            } catch(Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
+                } catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+}
 
         private void buttonThanhToan_Click(object sender, EventArgs e)
         {
